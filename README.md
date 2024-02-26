@@ -43,6 +43,7 @@ We chose logistic regression because of the following reasons:
 2. Efficiency: It is known to be a very popular classification model for categorical data, which is what we are focusing on. It is also very fast.
 3. Accuracy: It also provides a probability for each outcome, which makes it easier to understand how confident the model is in its predictions.
 
+Further evaluations on the performance of the model have been done within the file labelled `Milestone 3.ipynb`.
 
 ### Next steps: Other Classification Models
 
