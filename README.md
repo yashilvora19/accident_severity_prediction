@@ -20,6 +20,10 @@ All of this collectively gave us a better idea of what the data looks like which
 ### Preprocessing Steps
 We already began preprocessing the data by one hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`), and for `Light_Conditions`, we chose to make it ordinal and encode it from 0 for Dark, and 3 for Daylight. We selected MultiBinarizer to do multiple one-hot encoding for each row for the `Weather Conditions` as there were multiple categories that were satistified. Then we chose to normalize the `Latitude` and `Longitude` to make it a more contained value. We left the `Number_of_Casualties` and `Number_of_Vehicles` as is, as the values were just integers and seemed to have no large outliers.
 
+#### Milestone 3
+
+Our work for milestone 3 can be found in the notebook `Milestone 3.ipynb` in this repository. Since a link to this was needed as asked in the submission, here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone%203.ipynb).
+
 #### Standardizing 
 We finished up standardizing our data this week. We chose to use standardization as our preprocessing technique due to the following reasons:
 1. Our data didn't follow a normal distribution, hence standardizing it was imperative in order to get accurate results.
