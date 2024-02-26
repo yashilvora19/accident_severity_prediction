@@ -1,3 +1,9 @@
+# Members
+Arnav Kamdar
+Ishika Agrawal
+Mishka Jethwani
+Yashil Vora
+
 # Predicting Severity of Road Accidents
 
 ### Abstract 
