@@ -13,3 +13,31 @@ All of this collectively gave us a better idea of what the data looks like which
 
 ### Preprocessing Steps
 We already began preprocessing the data by one hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`), and for `Light_Conditions`, we chose to make it ordinal and encode it from 0 for Dark, and 3 for Daylight. We selected MultiBinarizer to do multiple one-hot encoding for each row for the `Weather Conditions` as there were multiple categories that were satistified. Then we chose to normalize the `Latitude` and `Longitude` to make it a more contained value. We left the `Number_of_Casualties` and `Number_of_Vehicles` as is, as the values were just integers and seemed to have no large outliers.
+
+#### Standardizing 
+We finished up standardizing our data this week. We chose to use standardization as our preprocessing technique due to the following reasons:
+1. Our data didn't follow a normal distribution, hence standardizing it was imperative in order to get accurate results.
+2. Maining the relationship between datapoints is also important, and since standardization doesn't distort our data distribution, it works well for preprocessing.
+3. Standardization also takes into account outliers, which will again make our model better.
+
+### Logistic Regression
+In our project, we our trying to classify accidents into the following categories:
+
+1. Mild
+2. Severe
+3. Fatal
+
+Since this is a classification task, we chose logistic regression as our machine learning model.
+
+Our model analyses the given data (42 columns) and outputs 0 is the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass logistic regression since there are more than 2 labels. 
+
+We chose logistic regression because of the following reasons:
+
+1. Simplicity: It's easy to implement, and is also one of the first models we learnt in class. 
+2. Efficiency: It is known to be a very popular classification model for categorical data, which is what we are focusing on. It is also very fast.
+3. Accuracy: It also provides a probability for each outcome, which makes it easier to understand how confident the model is in its predictions.
+
+
+### Next steps: Other Classification Models
+
+Our next step would be to compare our results from this model to those of other classification models like Neural Networks, Decision Trees, Random Forest, and SVM. By comparing our results, we would get a better understanding of a range of classification models, which would further help us determine which one works the best for our data. 
