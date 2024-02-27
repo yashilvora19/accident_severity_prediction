@@ -15,7 +15,7 @@ Our data is mainly focused on locations in the UK, so while it may not necessari
 
 We made use of the pairplot and heatmap with correlation matrix in order to get an overall sense of the distribution of data. Through this we were also able to get correlations between different features and became one with the data. We were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
 
-[!img1]<img width="740" alt="Screen Shot 2024-02-26 at 4 36 19 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/1fed11da-ad1a-4eba-ab57-52ab3eaf5053">
+<img width="740" alt="Screen Shot 2024-02-26 at 4 36 19 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/1fed11da-ad1a-4eba-ab57-52ab3eaf5053">
 
 All of this collectively gave us a better idea of what the data looks like which in turn gives us a better 
 idea of which models to use in the next step of this project.
