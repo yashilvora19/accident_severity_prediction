@@ -17,7 +17,31 @@ We made use of the pairplot and heatmap with correlation matrix in order to get 
 
 <img width="740" alt="Screen Shot 2024-02-26 at 4 36 19 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/1fed11da-ad1a-4eba-ab57-52ab3eaf5053">
 
-All of this collectively gave us a better idea of what the data looks like which in turn gives us a better idea of which models to use in the next step of this project.
+All of this collectively gave us a better idea of what the data looks like which in turn gives us a better 
+idea of which models to use in the next step of this project.
+
+The pair-plot we had plotted is given below. Through this pairplot, we can see the clear relation between latitude and longitude since it maps out the shape of UK.
+We can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This could include a lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
+<img width="712" alt="Screen Shot 2024-02-26 at 8 11 34 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/ad42b1a2-6f72-44c1-b021-50f850013496">
+
+Next, we plotted a heatmap from which we learned that there is an extremely low correlation between Accident Severity and all other columns. The highest correlations is with Number of Casualties, at 0.088 (which is the most obvious one). However, this doesn't mean that there isn't a connection between our input and output. 
+<img width="809" alt="Screen Shot 2024-02-26 at 8 15 16 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/73ec9ba3-5810-4767-809d-5133afac1887">
+
+We then plotted different types of graphs to compare and visulaise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively.
+
+1. Accidents by Light Conditions
+
+Intuitively, we would have thought that a lot of accidents happen during the darkness. However, through this barplot, this is false. The maximum number of accidents happen in the daylight. A possible reason for this could be that drivers are more reckless and speed more during when there is daylight, but are more careful in the dark.
+<img width="768" alt="Screen Shot 2024-02-26 at 8 16 23 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/dae046f2-005e-4383-b101-8327c5f3a921">
+
+2. Accidents over Time
+Number of accidents seem to be similar in all the years for similar timings during the year.  
+<img width="836" alt="Screen Shot 2024-02-26 at 8 20 04 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/064a5f9e-c042-4cf5-ac00-ae15d28ba495">
+
+3. Number of Vehicles V/S Number of Casualities
+Through this, we can see that greater the number of vehicles we have, more the casualties. This is another useful inference which gives us an indication about how the data is correlated.
+<img width="832" alt="Screen Shot 2024-02-26 at 8 20 23 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/5ec445c6-a5b7-48f6-93da-67f2ab913d07">
+
 
 ### Preprocessing Steps
 
@@ -51,6 +75,24 @@ We chose logistic regression because of the following reasons:
 3. Accuracy: It also provides a probability for each outcome, which makes it easier to understand how confident the model is in its predictions.
 
 Further evaluations on the performance of the model have been done within the file labelled `Milestone 3.ipynb`.
+
+The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and 85.26% for our Training, Testing and Validation. Other parameters such as recall, precision and support can be seen below in the classification reports.
+<img width="705" alt="Screen Shot 2024-02-26 at 8 24 25 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/6abd0743-8253-4c1e-9153-8610e9901909">
+
+We also plotted the confusio matrix. 
+<img width="707" alt="Screen Shot 2024-02-26 at 8 26 25 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/b0961ae0-ee91-4ec7-bc14-7a72e182ea79">
+
+We also plooted the frequency of our actual and predicted values.
+<img width="785" alt="Screen Shot 2024-02-26 at 8 27 52 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/21888cf7-45b7-4b14-b5ee-4e075f9dd11d">
+<img width="914" alt="Screen Shot 2024-02-26 at 8 28 08 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/c179713f-8823-44c4-8b04-467878e8fbcf">
+
+Conclusion: 
+Since all 3 accuracies are close to each other (around 85%), and at the same the mean squared error is also close (around 0.18), we can say that there is no major underfitting or overfitting that can be observed.
+
+While this would look like the model is performing well on a surface level, if we take a look at the classification reports and the confusion matrix plotted, we can clearly see that there are definitely issues with this model! The recall scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0. This means that we are rarely predicting those values and 'Mild' accidents are being predicted the most. It is also worth noting that in our dataset, majority of the accidents our mild and this could result in a bias in the data. Due to this bias, it is reasonable to assume that our logistic regression model is biased too and there can be a lot of improvements that can be made here.
+
+We can see this issue through the graph of the distribution of the data as well- the actual values have majority accidents classified as mild while the predicted values have all of them classified as that.
+
 
 ### Next steps: Other Classification Models
 
