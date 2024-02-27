@@ -22,7 +22,7 @@ idea of which models to use in the next step of this project.
 
 The pair-plot we had plotted is given below. Through this pairplot, we can see the clear relation between latitude and longitude since it maps out the shape of UK.
 We can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This could include a lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
-<img width="712" alt="Screen Shot 2024-02-26 at 8 11 34 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/ad42b1a2-6f72-44c1-b021-50f850013496">
+[!img2]<img width="712" alt="Screen Shot 2024-02-26 at 8 11 34 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/ad42b1a2-6f72-44c1-b021-50f850013496">
 
 Next, we plotted a heatmap from which we learned that there is an extremely low correlation between Accident Severity and all other columns. The highest correlations is with Number of Casualties, at 0.088 (which is the most obvious one). However, this doesn't mean that there isn't a connection between our input and output. 
 <img width="809" alt="Screen Shot 2024-02-26 at 8 15 16 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/73ec9ba3-5810-4767-809d-5133afac1887">
