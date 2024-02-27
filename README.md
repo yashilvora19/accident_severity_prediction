@@ -14,33 +14,32 @@ Our data is mainly focused on locations in the UK, so while it may not necessari
 ### Visualization Steps
 
 We made use of the pairplot and heatmap with correlation matrix in order to get an overall sense of the distribution of data. Through this we were also able to get correlations between different features and became one with the data. We were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
-![heapmap.png](heatmap.png)
+
 
 All of this collectively gave us a better idea of what the data looks like which in turn gives us a better 
 idea of which models to use in the next step of this project.
 
 The pair-plot we had plotted is given below. Through this pairplot, we can see the clear relation between latitude and longitude since it maps out the shape of UK.
 We can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This could include a lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
-[!img2]<img width="712" alt="Screen Shot 2024-02-26 at 8 11 34 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/ad42b1a2-6f72-44c1-b021-50f850013496">
+![heatmap](heatmap.png)
 
 Next, we plotted a heatmap from which we learned that there is an extremely low correlation between Accident Severity and all other columns. The highest correlations is with Number of Casualties, at 0.088 (which is the most obvious one). However, this doesn't mean that there isn't a connection between our input and output. 
-<img width="809" alt="Screen Shot 2024-02-26 at 8 15 16 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/73ec9ba3-5810-4767-809d-5133afac1887">
+![pairplot](pairplot.png)
 
 We then plotted different types of graphs to compare and visulaise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively.
 
 1. Accidents by Light Conditions
 
 Intuitively, we would have thought that a lot of accidents happen during the darkness. However, through this barplot, this is false. The maximum number of accidents happen in the daylight. A possible reason for this could be that drivers are more reckless and speed more during when there is daylight, but are more careful in the dark.
-<img width="768" alt="Screen Shot 2024-02-26 at 8 16 23 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/dae046f2-005e-4383-b101-8327c5f3a921">
+![img1](img1.png)
 
 2. Accidents over Time
-Number of accidents seem to be similar in all the years for similar timings during the year.  
-<img width="836" alt="Screen Shot 2024-02-26 at 8 20 04 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/064a5f9e-c042-4cf5-ac00-ae15d28ba495">
+Number of accidents seem to be similar in all the years for similar timings during the year.
+![img2](img2.png)
 
-3. Number of Vehicles V/S Number of Casualities
+4. Number of Vehicles V/S Number of Casualities
 Through this, we can see that greater the number of vehicles we have, more the casualties. This is another useful inference which gives us an indication about how the data is correlated.
-<img width="832" alt="Screen Shot 2024-02-26 at 8 20 23 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/5ec445c6-a5b7-48f6-93da-67f2ab913d07">
-
+![img3](img3.png)
 
 ### Preprocessing Steps
 
