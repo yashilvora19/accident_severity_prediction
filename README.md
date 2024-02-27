@@ -79,7 +79,9 @@ Further evaluations on the performance of the model have been done within the fi
 The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and 85.26% for our Training, Testing and Validation. Other parameters such as recall, precision and support can be seen below in the classification reports.
 <img width="705" alt="Screen Shot 2024-02-26 at 8 24 25 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/6abd0743-8253-4c1e-9153-8610e9901909">
 
-We also plotted the confusio matrix. 
+We also plotted the confusion matrix. 
+
+
 <img width="707" alt="Screen Shot 2024-02-26 at 8 26 25 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/b0961ae0-ee91-4ec7-bc14-7a72e182ea79">
 
 We also plooted the frequency of our actual and predicted values.
