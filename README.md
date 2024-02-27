@@ -80,9 +80,8 @@ The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and
 
 
 We also plooted the frequency of our actual and predicted values.
-<img width="785" alt="Screen Shot 2024-02-26 at 8 27 52 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/21888cf7-45b7-4b14-b5ee-4e075f9dd11d">
-<img width="914" alt="Screen Shot 2024-02-26 at 8 28 08 PM" src="https://github.com/yashilvora19/accident_severity_prediction/assets/122850345/c179713f-8823-44c4-8b04-467878e8fbcf">
-
+![freq1](freq1.png)
+![freq2](freq2.png)
 Conclusion: 
 Since all 3 accuracies are close to each other (around 85%), and at the same the mean squared error is also close (around 0.18), we can say that there is no major underfitting or overfitting that can be observed.
 
