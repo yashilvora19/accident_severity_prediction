@@ -14,7 +14,7 @@ Our data is mainly focused on locations in the UK, so while it may not necessari
 ### Visualization Steps
 
 We made use of the pairplot and heatmap with correlation matrix in order to get an overall sense of the distribution of data. Through this we were also able to get correlations between different features and became one with the data. We were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
-![heapmap.png]()
+![heapmap.png](heatmap.png)
 
 All of this collectively gave us a better idea of what the data looks like which in turn gives us a better 
 idea of which models to use in the next step of this project.
