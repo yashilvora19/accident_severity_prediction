@@ -2,7 +2,7 @@
 Arnav Kamdar,
 Ishika Agrawal,
 Mishka Jethwani,
-Yashil Vora,
+Yashil Vora
 
 # Predicting Severity of Road Accidents
 
