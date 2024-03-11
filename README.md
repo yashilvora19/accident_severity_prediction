@@ -111,19 +111,20 @@ Following are some advantages of a Neural Network over the previous models we ha
 - Neural Networks additionally give us the chance to tune our hyperparameters, allowing us to optimize manually for the greatest efficiency across both training and testing data.  
 
 The accuracy of our Neural Network model, came out to be 85.3%, 85.05% and 85.1% for our Training, Testing and Validation. Other parameters such as recall, precision and support can be seen below in the classification reports.
-![accuracy](TODO)
+TODO: ![accuracy]()
 
 Following are the results we found, plotted as graphs: 
 TODO
 
-Additionally, in our previous work we found that a Logistic Regression fails to classify values into all three classes. We wanted to check if this was the issue here as well, so we plotted out our frequencies for actual and predicted values as shown:
-![freq1](TODO)
-![freq2](TODO)
+Additionally, in our previous work we found that a Logistic Regression fails to classify values into all three classes. We wanted to check if this was the issue here as well, so we plotted out our frequencies for actual and predicted values for each class as shown:
+TODO: ![class1freqs]()
+TODO: ![class2freqs]()
+TODO: ![class3freqs]()
 
 Conclusion: 
 All 3 accuracies appear to be close to each other (around 85%). However, looking at the graph for validation accuracy (YASHIL TODO MAKE SURE THIS IMAGE IS IN THE README), we see that it is gradually decreasing across epochs. This shows signs of minor overfitting, but since the overall accuracy drops by a very low percentage, it can be neglected.
 
-While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The recall scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are (YASHIL TODO: WRITE ACCURACIES HERE), as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. It appears as though the bias in our data, though still highly relevant, is being countered by the higher complexity of this model. There are still improvements to be made, however - we will work towards improving the accuracy in a later model. 
+While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The recall scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are (YASHIL TODO: WRITE ACCURACIES HERE), as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. However, there are still large issues. Though the model predicts values from classes 'Severe' and 'Fatal', it does not do so nearly as accurately as it should, as shown in the graphs above. The bias in our data, though countered slightly by the complexity of our model, is still highly relevant. Additionally, there are still improvements to be made vis a vis accuracy - we will work towards improving this in our next model. 
 
 ### Next steps: Other Classification Models
 
