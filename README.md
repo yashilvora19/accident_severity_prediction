@@ -11,6 +11,8 @@ One of the leading causes of non natural death is road accidents. There may be s
 
 Our data is mainly focused on locations in the UK, so while it may not necessarily apply similarly in the US, we could still use this model to run on US datasets and see the results. It is a dataset with 14 columns and over 600k observations, with columns including severity of accident, the date, number of casualties, longitude/ latitude, road surface conditions, road types, urban/ rural areas, weather conditions, and vehicle types. Ethical concerns include if our stakeholders were vehicle companies, would they have reduced sales if, say, trucks were more likely to lead to severe accidents? However, by figuring out what would predict the severity of road accidents, we can also prevent harm by noting the features that largely impact the severity. 
 
+### Milestone 2
+
 ### Visualization Steps
 
 We made use of the pairplot and heatmap with correlation matrix in order to get an overall sense of the distribution of data. Through this we were also able to get correlations between different features and became one with the data. We were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
@@ -45,7 +47,7 @@ Through this, we can see that greater the number of vehicles we have, more the c
 
 We already began preprocessing the data by one hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`), and for `Light_Conditions`, we chose to make it ordinal and encode it from 0 for Dark, and 3 for Daylight. We selected MultiBinarizer to do multiple one-hot encoding for each row for the `Weather Conditions` as there were multiple categories that were satistified. Then we chose to normalize the `Latitude` and `Longitude` to make it a more contained value. We left the `Number_of_Casualties` and `Number_of_Vehicles` as is, as the values were just integers and seemed to have no large outliers.
 
-#### Milestone 3
+### Milestone 3
 
 Our work for milestone 3 can be found in the notebook `Milestone 3.ipynb` in this repository. Since a link to this was needed as asked in the submission, here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone%203.ipynb).
 
@@ -79,7 +81,7 @@ The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and
 
 
 
-We also plooted the frequency of our actual and predicted values.
+We also plotted the frequency of our actual and predicted values.
 ![freq1](freq1.png)
 ![freq2](freq2.png)
 Conclusion: 
@@ -92,3 +94,26 @@ We can see this issue through the graph of the distribution of the data as well-
 ### Next steps: Other Classification Models
 
 Our next step would be to compare our results from this model to those of other classification models like Neural Networks, Decision Trees, Random Forest, and SVM. By comparing our results, we would get a better understanding of a range of classification models, which would further help us determine which one works the best for our data. 
+
+### Milestone 4: Neural Networks
+For this milestone, we have decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than 85%, i.e. it should not predict only 'Mild' accidents. Our work done can be found in the notebook `Milestone 4.ipynb`. Here is the link to this [notebook](https://colab.research.google.com/drive/1IIXrIlHMrASMgN0aOlF5x2D4kMjjlugm?usp=sharing).
+
+## Neural Network: 
+In our Neural Network, we used the following parameters:
+- TODO
+- TODO
+- TODO
+
+We decided to use a Neural Network as it seemed the logical next step from a regression model, and it can work with classification problems pretty well. Our model analyses the given data (42 columns) and outputs 0 is the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass classification since there are more than 2 labels. 
+
+Following are some advantages of a Neural Network over the previous models we have considered:
+- TODO
+- TODO
+- TODO
+
+The accuracy of our Logistic Regression model, came out to be TODO%, TODO% and TODO% for our Training, Testing and Validation. Other parameters such as recall, precision and support can be seen below in the classification reports.
+
+Following are the results we found, plotted as graphs: 
+TODO
+
+Analysis: TODO
