@@ -1,14 +1,21 @@
-
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
   &nbsp;&nbsp;&nbsp;
   <img src="https://img.shields.io/badge/TensorFlow-Latest-orange.svg" alt="TensorFlow Latest">
   &nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/scikit--learn-Latest-brightgreen.svg" alt="scikit-learn Latest">
-    <a href="https://colab.research.google.com/">
+  <a href="https://colab.research.google.com/">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
   </a>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/scikit--learn-Latest-brightgreen.svg" alt="scikit-learn Latest">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/pandas-Latest-brightgreen.svg" alt="pandas Latest">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/numpy-Latest-blue.svg" alt="numpy Latest">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/seaborn-Latest-blueviolet.svg" alt="seaborn Latest">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/matplotlib-Latest-blueviolet.svg" alt="matplotlib Latest">
 </p>
 
 
