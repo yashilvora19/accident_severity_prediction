@@ -4,11 +4,11 @@
   &nbsp;&nbsp;&nbsp;
   <img src="https://img.shields.io/badge/TensorFlow-Latest-orange.svg" alt="TensorFlow Latest">
   &nbsp;&nbsp;&nbsp;
-  <a href="https://colab.research.google.com/">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
-  </a>
   &nbsp;&nbsp;&nbsp;
   <img src="https://img.shields.io/badge/scikit--learn-Latest-brightgreen.svg" alt="scikit-learn Latest">
+    <a href="https://colab.research.google.com/">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+  </a>
 </p>
 
 
