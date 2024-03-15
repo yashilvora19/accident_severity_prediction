@@ -9,10 +9,7 @@
     <img src="https://img.shields.io/badge/TensorFlow-Latest-orange.svg" alt="TensorFlow Latest">
   </a> 
   &nbsp;&nbsp;&nbsp;
-  <a href="https://colab.research.google.com/">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Google Colaboratory" >
-  </a>
-  &nbsp;&nbsp;&nbsp;
+  
   <a href="https://scikit-learn.org/stable/install.html">
     <img src="https://img.shields.io/badge/scikit--learn-Latest-brightgreen.svg" alt="scikit-learn Latest">
   </a>
