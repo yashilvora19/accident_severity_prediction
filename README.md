@@ -44,7 +44,7 @@ Ishika Agrawal,
 Mishka Jethwani,
 Yashil Vora
 
-# Predicting Severity of Road Accidents in the U.K.
+# Predicting Severity of Road Accidents
 
 ## Table of Contents
 
