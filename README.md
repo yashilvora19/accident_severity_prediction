@@ -1,5 +1,5 @@
 
-![banner.png](imgs/banner.jpeg)
+![banner.png](imgs/github_banner.png)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
