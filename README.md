@@ -75,7 +75,7 @@ TODO
 
 ## Methods
 
-### Data Exploration Results
+### Data Exploration 
 #### Visualization Steps
 
 We made use of the pairplot and heatmap with correlation matrix in order to get an overall sense of the distribution of data. Through this we were also able to get correlations between different features and became one with the data.
