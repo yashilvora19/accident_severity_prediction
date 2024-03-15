@@ -122,7 +122,7 @@ In the Neural Network we created, we used the following specifications and param
 - Adam optimizer: We used Adam over SGD as our optimizer because it is better suited for large datasets, and converges faster without any tradeoff accuracy-wise.
 - Sparse categorical crossentropy loss: We used  "Sparse Categorical Crossentropy" as our loss function because it allows for the data to not be one-hot encoded (which aligns with our preprocessed data) and optimizes for minimized loss across all three classes. We found from past work that using optimization functions such as mse would not work as efficiently with multiple classes. 
 
-### Model 3: Support Vector Machines
+### Model 3: SVMs
 
 TODO: Work for SVM's here...
 
