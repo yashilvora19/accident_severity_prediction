@@ -3,36 +3,16 @@ import pandas as pd
 import numpy as np
 
 # RUN THE FILE
-# python -m streamlit run app.py OR
-# streamlit run app.py
-st.set_page_config(
-    page_title="Welcome to our app!"
-)
+# python -m streamlit run Home.py OR
+# streamlit run Home.py
 
-st.sidebar.header("Our Model")
+st.set_page_config(page_title="Predicting Severity of Road Accidents in the U.K.")
 
-st.sidebar.title("Options")
-option = st.sidebar.selectbox("Select an option:", ["About", "Predict"])
+st.sidebar.title("Navigation")
 
-if option == "About":
-    st.header("About")
-    st.write("This app predicts the severity of road accidents based on various factors such as road conditions, weather conditions, vehicle types, etc.")
+st.title("CSE 151A Project - Predicting Severity of Road Accidents in the U.K.")
 
-    st.subheader("Ethical Concerns")
-    st.write("There may be ethical concerns if stakeholders such as vehicle companies are involved. By predicting accident severity, we can work towards preventing harm by understanding the factors that largely impact severity.")
-
-    st.subheader("Data Source")
-    st.write("The dataset used in this app mainly focuses on locations in the UK, but the model can be applied to datasets from other regions as well.")
-
-
-st.title('CSE 151A Project- Accident Severity Prediction')
-
-st.sidebar.success("Want to learn more about our project?")
-
-# # path = os.path.dirname(__file__)
-# accident = '../imgs/accident.jpg'
-# image1 = Image.open(accident)
-
+# Add your project description here
 
 st.markdown(
     """
@@ -42,14 +22,58 @@ st.markdown(
     Decision Trees etc. Attributes that may be used to predict the data include the road conditions, the weather 
     conditions, vehicle types, or what kind of area they’re in.
 
-    Our data is mainly focused on locations in the UK, so while it may not necessarily apply similarly in the US, we could still use this model to run on US datasets and see the results. It is a dataset with 14 columns and over 600k observations, with columns including severity of accident, the date, number of casualties, longitude/ latitude, road surface conditions, road types, urban/ rural areas, weather conditions, and vehicle types. Ethical concerns include if our stakeholders were vehicle companies, would they have reduced sales if, say, trucks were more likely to lead to severe accidents? However, by figuring out what would predict the severity of road accidents, we can also prevent harm by noting the features that largely impact the severity.
+    Our data is mainly focused on locations in the UK, so while it may not necessarily apply similarly in the US, 
+    we could still use this model to run on US datasets and see the results. It is a dataset with 
+    14 columns and over 600k observations, with columns including severity of accident, the date, number 
+    of casualties, longitude/ latitude, road surface conditions, road types, urban/ rural areas, 
+    weather conditions, and vehicle types. Ethical concerns include if our stakeholders were vehicle companies, 
+    would they have reduced sales if, say, trucks were more likely to lead to severe accidents? 
+    However, by figuring out what would predict the severity of road accidents, we can also prevent harm by 
+    noting the features that largely impact the severity.
     """
 )
-
-# st.image(image1)
 
 st.markdown(
     """
-    ### Test Our Model
+    ### Test Our Model Here!
     """
 )
+latitude = st.text_input("Latitude", "")
+longitude = st.text_input("Longitude", "")
+# Accident_Severity', 'Accident Date', 'Latitude',
+#        'Light_Conditions', 'Longitude',
+#        'Number_of_Casualties', 'Number_of_Vehicles', 'Road_Surface_Conditions',
+#        'Road_Type', 'Urban_or_Rural_Area', 'Weather_Conditions',
+#        'Vehicle_Type'
+# 
+
+# urban_or_rural_area = st.selectbox("Urban or Rural Area", ["Urban", "Rural"])
+number_of_casualties = st.text_input("Number of Casualties", "")
+number_of_vehicles = st.text_input("Number of Vehicles", "")
+day = st.text_input("Day (1-31)", "")
+month = st.text_input("Month (1-12)", "")
+year = st.text_input("Year (XXXX)", "")
+
+light_conditions = st.radio("Light Conditions", ["Darkness - no lighting", "Darkness - lights unlit", "Darkness - lights lit", "Daylight"])
+weather_conditions = st.multiselect("Weather Conditions", ["Fine", "Raining", "High Winds", "Snowing", "Fog/Mist","Other"])
+
+road_type = st.radio('Road Type', ['Single carriageway', 'Dual carriageway', 'One way street', 
+                           'Roundabout', 'Slip road'])
+
+vehicle_type = st.radio("Vehicle Type", 
+                            ['Car', 'Bus/Coach', 'Minibus', 'Van', 'Motorcycle (<50cc)', 
+                             'Motorcycle (125cc-500cc)', 'Motorcycle (>500cc)', 'Goods (3.5-7.5 tonnes)', 
+                             'Goods (>7.5 tonnes)', 'Taxi/Private hire car','Minibus', 'Pedal Cycle',
+                             'Agricultural vehicle', 'Horse','Other'])
+
+Road_Surface_Conditions = st.radio('Road Conditions', ['Dry', 'Wet/damp', 'Snow', 'Frost/ice','Flood over 3cm. deep'])
+urban_or_rural = st.radio('Urban or Rural', ['Urban', 'Rural'])
+
+st.write('Our model will now predict the severity of the accident given these conditions. Severity can be Mild, Severe, or Fatal')
+
+clicked = st.button('Predict Accident Severity')
+
+if clicked:
+    st.write("Results")
+    st.success("Data processed successfully. Here's the accident severity: Severe")
+    st.balloons()
