@@ -44,7 +44,7 @@ Ishika Agrawal,
 Mishka Jethwani,
 Yashil Vora
 
-# Predicting Severity of Road Accidents
+# Strategizing Safety : Predicting Road Accident Severity for Effective Prevention
 
 ## Table of Contents
 
