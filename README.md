@@ -38,12 +38,17 @@ Yashil Vora
 
 - [**Methods**](#methods)
     - [Data Exploration and Preprocessing](#data-exploration-and-preprocessing)
-    - [Preprocessing Steps](#preprocessing-step
+    - [Preprocessing Steps](#preprocessing-step)
     - [Model 1: Logistic Regression](#model-1-logistic-regression)
     - [Model 2: Neural Networks](#model-2-neural-networks)
     - [Model 3: Support Vector Machines](#model-3-support-vector-machines)
 
 - [**Results**](#results)
+    - [Data Exploration and Preprocessing](#data-exploration-and-preprocessing)
+    - [Preprocessing Steps](#preprocessing-step)
+    - [Model 1: Logistic Regression](#model-1-logistic-regression)
+    - [Model 2: Neural Networks](#model-2-neural-networks)
+    - [Model 3: Support Vector Machines](#model-3-support-vector-machines)
 
 - [**Discussion**](#discussion)
 
