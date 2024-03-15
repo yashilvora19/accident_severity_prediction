@@ -10,7 +10,7 @@
   </a> 
   &nbsp;&nbsp;&nbsp;
   <a href="https://colab.research.google.com/">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Google Colaboratory">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Google Colaboratory" >
   </a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://scikit-learn.org/stable/install.html">
