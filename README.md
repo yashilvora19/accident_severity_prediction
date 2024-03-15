@@ -1,14 +1,13 @@
 
 ![banner.png](imgs/github_banner.png)
-
 <p align="center">
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
-  </a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://www.tensorflow.org/">
+  </a>  
+  &nbsp;&nbsp;&nbsp;  
+    <a href="https://www.tensorflow.org/">
     <img src="https://img.shields.io/badge/TensorFlow-Latest-orange.svg" alt="TensorFlow Latest">
-  </a>
+  </a> 
   &nbsp;&nbsp;&nbsp;
   <a href="https://colab.research.google.com/">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
@@ -22,6 +21,8 @@
     <img src="https://img.shields.io/badge/pandas-Latest-brightgreen.svg" alt="pandas Latest">
   </a>
   &nbsp;&nbsp;&nbsp;
+    </p>
+  <p align="center">
   <a href="https://numpy.org/install/">
     <img src="https://img.shields.io/badge/numpy-Latest-blue.svg" alt="numpy Latest">
   </a>
