@@ -2,24 +2,39 @@
 ![banner.png](imgs/github_banner.png)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
+  </a>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/TensorFlow-Latest-orange.svg" alt="TensorFlow Latest">
+  <a href="https://www.tensorflow.org/">
+    <img src="https://img.shields.io/badge/TensorFlow-Latest-orange.svg" alt="TensorFlow Latest">
+  </a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://colab.research.google.com/">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
   </a>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/scikit--learn-Latest-brightgreen.svg" alt="scikit-learn Latest">
+  <a href="https://scikit-learn.org/stable/install.html">
+    <img src="https://img.shields.io/badge/scikit--learn-Latest-brightgreen.svg" alt="scikit-learn Latest">
+  </a>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/pandas-Latest-brightgreen.svg" alt="pandas Latest">
+  <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html">
+    <img src="https://img.shields.io/badge/pandas-Latest-brightgreen.svg" alt="pandas Latest">
+  </a>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/numpy-Latest-blue.svg" alt="numpy Latest">
+  <a href="https://numpy.org/install/">
+    <img src="https://img.shields.io/badge/numpy-Latest-blue.svg" alt="numpy Latest">
+  </a>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/seaborn-Latest-blueviolet.svg" alt="seaborn Latest">
+  <a href="https://seaborn.pydata.org/installing.html">
+    <img src="https://img.shields.io/badge/seaborn-Latest-blueviolet.svg" alt="seaborn Latest">
+  </a>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/matplotlib-Latest-blueviolet.svg" alt="matplotlib Latest">
+  <a href="https://matplotlib.org/users/installing.html">
+    <img src="https://img.shields.io/badge/matplotlib-Latest-blueviolet.svg" alt="matplotlib Latest">
+  </a>
 </p>
+
 
 
 # Members
