@@ -152,7 +152,7 @@ Number of accidents seem to be similar in all the years for similar timings duri
 Through this, we can see that greater the number of vehicles we have, more the casualties. This is another useful inference which gives us an indication about how the data is correlated.
 ![img3](imgs/img3.png)
 
-### Pre-Processing Results
+### Preprocessing Results
 
 #### Categorical Features
 Categorical features which were one-hot encoded to convert them into numerical representations include, Road_Surface_ConditionsRoad_Type, Urban_or_Rural_Area, and Vehicle_Type. This conversion was necessary to incorporate these features into machine learning models effectively.
@@ -214,7 +214,7 @@ Additionally, in our previous work we found that a Logistic Regression fails to 
 
 All 3 accuracies appear to be close to each other (around 85%). However, looking at the graph for validation accuracy, we see that it is gradually decreasing across epochs. This shows signs of minor overfitting, but since the overall accuracy drops by a very low percentage, it can be neglected.
 
-### Model 3 : SVMs Discussion
+### Model 3 : SVMs Results
 
 
 ## Discussion
@@ -234,7 +234,7 @@ We saw that there is not much variance in the accidents that happen through the 
 3. Number of Vehicles V/S Number of Casualities
 Like we would have expected, more the number of behicals are involved in an accident, more the peeple are at danger ultimately resulting in more casualities.
 
-### Pre-processing Discussion
+### Preprocessing Discussion
 
 #### Categorical Features
 
