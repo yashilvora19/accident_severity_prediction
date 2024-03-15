@@ -185,7 +185,7 @@ We can see this issue through the graph of the distribution of the data as well-
 
 Since all 3 accuracies are close to each other (around 85%), and at the same the mean squared error is also close (around 0.18), we can say that there is no major underfitting or overfitting that can be observed.
 
-### Model 2 : Neural Network Results
+### Model 2: Neural Network Results
 
 The accuracy of our Neural Network model, came out to be 85.3%, 85.05% and 85.1% for our Training, Testing and Validation. Other parameters such as recall, precision and support can be seen below in the classification reports.
 
@@ -214,7 +214,8 @@ Additionally, in our previous work we found that a Logistic Regression fails to 
 
 All 3 accuracies appear to be close to each other (around 85%). However, looking at the graph for validation accuracy, we see that it is gradually decreasing across epochs. This shows signs of minor overfitting, but since the overall accuracy drops by a very low percentage, it can be neglected.
 
-### Model 3 : SVMs Results
+### Model 3: SVMs Results
+TODO
 
 
 ## Discussion
@@ -250,7 +251,7 @@ Normalization of Latitude and Longitude is particularly beneficial in geospatial
 
 Retaining Number_of_Casualties and Number_of_Vehicles without transformation was deemed appropriate due to their direct relevance to the study objective. These features provide crucial information about the severity and complexity of accidents, making them indispensable for predictive modeling.
 
-### Model 1 : Logistic Regression Discussion
+### Model 1: Logistic Regression Discussion
 We performed Standardzation on our model before we moved forward with actual model implementation. We chose to use standardization as our preprocessing technique due to the following reasons:
 1. Our data didn't follow a normal distribution, hence standardizing it was imperative in order to get accurate results.
 2. Maining the relationship between datapoints is also important, and since standardization doesn't distort our data distribution, it works well for preprocessing.
@@ -264,7 +265,7 @@ We chose logistic regression because of the following reasons:
 Conclusion: 
 While this would look like the model is performing well on a surface level, if we take a look at the classification reports and the confusion matrix plotted, we can clearly see that there are definitely issues with this model! The recall scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0. This means that we are rarely predicting those values and 'Mild' accidents are being predicted the most. It is also worth noting that in our dataset, majority of the accidents our mild and this could result in a bias in the data. Due to this bias, it is reasonable to assume that our logistic regression model is biased too and there can be a lot of improvements that can be made here.
 
-### Model 2 : Neural Network Discussion
+### Model 2: Neural Network Discussion
 
 We decided to use a Neural Network as it seemed the logical next step from a regression model, and it can work with classification problems pretty well. Our model analyses the given data (42 columns) and outputs 0 is the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass classification since there are more than 2 labels. 
 
@@ -276,12 +277,8 @@ Following are some advantages of a Neural Network over the previous models we ha
 Conclusion: 
 While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The precision scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0.31 and 0.13 respectively, as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. However, there are still large issues. Though the model predicts values from classes 'Severe' and 'Fatal', it does not do so nearly as accurately as it should, as shown in the graphs above. The bias in our data, though countered slightly by the complexity of our model, is still highly relevant. Additionally, there are still improvements to be made vis a vis accuracy - we will work towards improving this in our next model. 
 
-### Model 3 : SVMs Discussion
-
-
-
-TODO:
-Discussion section: This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
+### Model 3: SVMs Discussion
+TODO
 
 ## Conclusion and Future Steps
 
