@@ -44,25 +44,25 @@ idea of which models to use in the next step of this project.
 
 The pair-plot we had plotted is given below. Through this pairplot, we can see the clear relation between latitude and longitude since it maps out the shape of UK.
 We can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This could include a lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
-![heatmap](heatmap.png)
+![heatmap](imgs/heatmap.png)
 
 Next, we plotted a heatmap from which we learned that there is an extremely low correlation between Accident Severity and all other columns. The highest correlations is with Number of Casualties, at 0.088 (which is the most obvious one). However, this doesn't mean that there isn't a connection between our input and output. 
-![pairplot](pairplot.png)
+![pairplot](imgs/pairplot.png)
 
 We then plotted different types of graphs to compare and visulaise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively.
 
 1. Accidents by Light Conditions
 
 Intuitively, we would have thought that a lot of accidents happen during the darkness. However, through this barplot, this is false. The maximum number of accidents happen in the daylight. A possible reason for this could be that drivers are more reckless and speed more during when there is daylight, but are more careful in the dark.
-![img1](img1.png)
+![img1](imgs/img1.png)
 
 2. Accidents over Time
 Number of accidents seem to be similar in all the years for similar timings during the year.
-![img2](img2.png)
+![img2](imgs/img2.png)
 
 4. Number of Vehicles V/S Number of Casualities
 Through this, we can see that greater the number of vehicles we have, more the casualties. This is another useful inference which gives us an indication about how the data is correlated.
-![img3](img3.png)
+![img3](imgs/img3.png)
 
 ### Preprocessing Steps
 
@@ -98,20 +98,20 @@ We chose logistic regression because of the following reasons:
 Further evaluations on the performance of the model have been done within the file labelled `Milestone 3.ipynb`.
 
 The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and 85.26% for our Training, Testing and Validation. Other parameters such as recall, precision and support can be seen below in the classification reports.
-![accuracy](accuracy.png)
+![accuracy](imgs/accuracy.png)
 
 
 
 We also plotted the frequency of our actual and predicted values.
-![freq1](freq1.png)
-![freq2](freq2.png)
+![freq1](imgs/freq1.png)
+![freq2](imgs/freq2.png)
 Conclusion: 
 Since all 3 accuracies are close to each other (around 85%), and at the same the mean squared error is also close (around 0.18), we can say that there is no major underfitting or overfitting that can be observed.
 
 While this would look like the model is performing well on a surface level, if we take a look at the classification reports and the confusion matrix plotted, we can clearly see that there are definitely issues with this model! The recall scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0. This means that we are rarely predicting those values and 'Mild' accidents are being predicted the most. It is also worth noting that in our dataset, majority of the accidents our mild and this could result in a bias in the data. Due to this bias, it is reasonable to assume that our logistic regression model is biased too and there can be a lot of improvements that can be made here.
 
 We can see this issue through the graph of the distribution of the data as well- the actual values have majority accidents classified as mild while the predicted values have all of them classified as that.
-![graph.png](graph.png)
+![graph.png](imgs/graph.png)
 
 ### Milestone 4: Neural Networks
 For this milestone, we have decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than 85%, i.e. it should not predict only 'Mild' accidents. Our work done can be found in the notebook `Milestone 4.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_4.ipynb).
@@ -135,29 +135,29 @@ The accuracy of our Neural Network model, came out to be 85.3%, 85.05% and 85.1%
 
 Classification report and confusion matrix for the 'Mild' severity class.
 
-![class1](nn_cm_1.png)
+![class1](imgs/nn_cm_1.png)
 
 Classification report and confusion matrix for the 'Severe' severity class.
 
-![class1](nn_cm_2.png)
+![class1](imgs/nn_cm_2.png)
 
 Classification report and confusion matrix for the 'Fatal' severity class.
 
-![class1](nn_cm_3.png)
+![class1](imgs/nn_cm_3.png)
 
 
 Following are the results we found, plotted as graphs: 
 
-![loss_acc](nn_loss_acc.png)
+![loss_acc](imgs/nn_loss_acc.png)
 
 
 Additionally, in our previous work we found that a Logistic Regression fails to classify values into all three classes. We wanted to check if this was the issue here as well, so we plotted out our frequencies for actual and predicted values for each class as shown:
 
-![class1freqs](nn_bar1.png)
+![class1freqs](imgs/nn_bar1.png)
 
-![class2freqs](nn_bar2.png)
+![class2freqs](imgs/nn_bar2.png)
 
-![class3freqs](nn_bar3.png)
+![class3freqs](imgs/nn_bar3.png)
 
 Conclusion: 
 All 3 accuracies appear to be close to each other (around 85%). However, looking at the graph for validation accuracy, we see that it is gradually decreasing across epochs. This shows signs of minor overfitting, but since the overall accuracy drops by a very low percentage, it can be neglected.
