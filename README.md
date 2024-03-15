@@ -37,8 +37,8 @@ Yashil Vora
 - [**Try The Model On Our Webapp**](#try-the-model-on-our-webapp)
 
 - [**Methods**](#methods)
-    - [Data Exploration](#data-exploration-and-preprocessing)
-    - [Preprocessing Steps](#preprocessing-step)
+    - [Data Exploration](#data-exploration)
+    - [Preprocessing Steps](#preprocessing-steps)
     - [Model 1: Logistic Regression](#model-1-logistic-regression)
     - [Model 2: Neural Networks](#model-2-neural-networks)
     - [Model 3: Support Vector Machines](#model-3-support-vector-machines)
