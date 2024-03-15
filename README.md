@@ -38,16 +38,9 @@ Yashil Vora
 
 - [**Methods**](#methods)
     - [Data Exploration and Preprocessing](#data-exploration-and-preprocessing)
-        - [Visualization Steps](#visualization-steps)
-        - [Preprocessing Steps](#preprocessing-steps)
-
+    - [Preprocessing Steps](#preprocessing-step
     - [Model 1: Logistic Regression](#model-1-logistic-regression)
-        - [Standardizing](#standardizing)
-        - [Logistic Regression](#logistic-regression)
-
     - [Model 2: Neural Networks](#model-2-neural-networks)
-        - [Neural Network](#neural-network)
-
     - [Model 3: Support Vector Machines](#model-3-support-vector-machines)
 
 - [**Results**](#results)
@@ -58,9 +51,11 @@ Yashil Vora
 
 ## Introduction
 
-One of the leading causes of non natural death is road accidents. There may be several contributing factors that lead to vehicle casualties, including traffic, weather, road conditions etc. We wanted to predict the severity of road accidents ranging from Slight, Serious, to Fatal using supervised models such as Logistic Regression, Decision Trees etc. Attributes that may be used to predict the data include the road conditions, the weather conditions, vehicle types, or what kind of area they’re in. 
+One of the leading causes of non natural death is road accidents. There may be several contributing factors that lead to vehicle casualties, including traffic, weather, road conditions etc. We wanted to predict the severity of road accidents ranging from Slight, Serious, to Fatal using supervised models such as Logistic Regression, SVMs, Neural Nets, Decision Trees etc. Attributes that may be used to predict the data include the road conditions, the weather conditions, vehicle types, or what kind of area they’re in. 
 
-Our data is mainly focused on locations in the UK, so while it may not necessarily apply similarly in the US, we could still use this model to run on US datasets and see the results. It is a dataset with 14 columns and over 600k observations, with columns including severity of accident, the date, number of casualties, longitude/ latitude, road surface conditions, road types, urban/ rural areas, weather conditions, and vehicle types. Ethical concerns include if our stakeholders were vehicle companies, would they have reduced sales if, say, trucks were more likely to lead to severe accidents? However, by figuring out what would predict the severity of road accidents, we can also prevent harm by noting the features that largely impact the severity. 
+Our data is mainly focused on locations in the UK, so while it may not necessarily apply similarly in the US, we could still use this model to run on US datasets and see the results. It is a dataset with 14 columns and over 600k observations, with columns including severity of accident, the date, number of casualties, longitude,  latitude, road surface conditions, road types, urban/ rural areas, weather conditions, and vehicle types.
+
+Ethical concerns consist ----- if our stakeholders were vehicle companies, would they have reduced sales if, say, trucks were more likely to lead to severe accidents? However, by figuring out what would predict the severity of road accidents, we can also prevent harm by noting the features that largely impact the severity. 
 
 ## Try The Model On Our Webapp
 
@@ -71,18 +66,62 @@ TODO
 ## Methods
 
 ### Data Exploration and Preprocessing
-
-
 Our work done can be found in the notebook `Data_Cleaning_and_EDA_Final.ipynb`. Here is the link to this [jupyter notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Data_Cleaning_and_EDA_Final.ipynb).
-
 
 #### Visualization Steps
 
 We made use of the pairplot and heatmap with correlation matrix in order to get an overall sense of the distribution of data. Through this we were also able to get correlations between different features and became one with the data. We were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
 
-
 All of this collectively gave us a better idea of what the data looks like which in turn gives us a better 
 idea of which models to use in the next step of this project.
+
+We then plotted different types of graphs to compare and visulaise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively. The different graphs we plotted were
+
+1. Accidents by Light Conditions
+2. Accidents over Time
+3. Number of Vehicles V/S Number of Casualities
+4. 
+### Preprocessing Steps
+Our work done can be found in the notebook `Data_Cleaning_and_EDA_Final.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Data_Cleaning_and_EDA_Final.ipynb).
+
+We already began preprocessing the data by one hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`), and for `Light_Conditions`, we chose to make it ordinal and encode it from 0 for Dark, and 3 for Daylight. We selected MultiBinarizer to do multiple one-hot encoding for each row for the `Weather Conditions` as there were multiple categories that were satistified. Then we chose to normalize the `Latitude` and `Longitude` to make it a more contained value. We left the `Number_of_Casualties` and `Number_of_Vehicles` as is, as the values were just integers and seemed to have no large outliers.
+
+### Model 1: Logistic Regression
+
+Our work done can be found in the notebook `Milestone_3.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone%203.ipynb).
+
+#### Logistic Regression
+In our project, we our trying to classify accidents into the following categories:
+1. Mild
+2. Severe
+3. Fatal
+
+Since this is a classification task, we chose logistic regression as our machine learning model.
+
+Our model analyses the given data (42 columns) and outputs 0 is the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass logistic regression since there are more than 2 labels. 
+
+
+### Model 2: Neural Networks
+
+Our work done can be found in the notebook `Milestone_4.ipynb`. Here is the link to this [jupyter notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_4.ipynb).
+
+For this milestone, we have decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than 85%, i.e. it should not predict only 'Mild' accidents (this was a drawback of our last model) and should try to classify the accidents as Severe and Fatal as well. 
+
+#### Neural Network: 
+In the Neural Network we created, we used the following specifications and parameters:
+- 4 layers: Upon some tuning of the number of layers, we found that 4 layers was the sweet spot between efficiency and output. We also did not want to overfit our training data, so we decided to keep the number of layers relatively low. 
+- Sigmoid activation functions in hidden layers: We tuned our hyperparameters to find that this worked best as an activation function in our three hidden layers. A sigmoid activation function is simple enough for efficient runtime, and works well with classification problems. Our hidden layers have 64, 32, and 16 units respectively, to allow the data to scale down for our final output layer
+- Softmax activation function in output layer: Since our output is a multinomial classification, we found that softmax was the best activation function to match the results we wanted. We used three units in our output layer, since our model is supposed to classify into three classes: 'Mild', 'Severe', and 'Fatal'.
+- Adam optimizer: We used Adam over SGD as our optimizer because it is better suited for large datasets, and converges faster without any tradeoff accuracy-wise.
+- Sparse categorical crossentropy loss: We used  "Sparse Categorical Crossentropy" as our loss function because it allows for the data to not be one-hot encoded (which aligns with our preprocessed data) and optimizes for minimized loss across all three classes. We found from past work that using optimization functions such as mse would not work as efficiently with multiple classes. 
+
+### Model 3: Support Vector Machines
+
+TODO: Work for SVM's here...
+
+## Results
+
+### Data Exploration and Preprocessing
 
 The pair-plot we had plotted is given below. Through this pairplot, we can see the clear relation between latitude and longitude since it maps out the shape of UK.
 We can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This could include a lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
@@ -90,8 +129,6 @@ We can also see a correlation between year and number of casulties, since the nu
 
 Next, we plotted a heatmap from which we learned that there is an extremely low correlation between Accident Severity and all other columns. The highest correlations is with Number of Casualties, at 0.088 (which is the most obvious one). However, this doesn't mean that there isn't a connection between our input and output. 
 ![pairplot](imgs/pairplot.png)
-
-We then plotted different types of graphs to compare and visulaise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively.
 
 1. Accidents by Light Conditions
 
@@ -106,31 +143,13 @@ Number of accidents seem to be similar in all the years for similar timings duri
 Through this, we can see that greater the number of vehicles we have, more the casualties. This is another useful inference which gives us an indication about how the data is correlated.
 ![img3](imgs/img3.png)
 
-#### Preprocessing Steps
+### Pre-Processing 
 
-We already began preprocessing the data by one hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`), and for `Light_Conditions`, we chose to make it ordinal and encode it from 0 for Dark, and 3 for Daylight. We selected MultiBinarizer to do multiple one-hot encoding for each row for the `Weather Conditions` as there were multiple categories that were satistified. Then we chose to normalize the `Latitude` and `Longitude` to make it a more contained value. We left the `Number_of_Casualties` and `Number_of_Vehicles` as is, as the values were just integers and seemed to have no large outliers.
-
-### Model 1: Logistic Regression
-
-Our work done can be found in the notebook `Milestone_3.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone%203.ipynb).
-
-#### Standardizing 
-We finished up standardizing our data this week. We chose to use standardization as our preprocessing technique due to the following reasons:
+### Model 1
+We chose to use standardization as our preprocessing technique due to the following reasons:
 1. Our data didn't follow a normal distribution, hence standardizing it was imperative in order to get accurate results.
 2. Maining the relationship between datapoints is also important, and since standardization doesn't distort our data distribution, it works well for preprocessing.
 3. Standardization also takes into account outliers, which will again make our model better.
-
-#### Logistic Regression
-In our project, we our trying to classify accidents into the following categories:
-
-1. Mild
-2. Severe
-3. Fatal
-
-Since this is a classification task, we chose logistic regression as our machine learning model.
-
-Our model analyses the given data (42 columns) and outputs 0 is the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass logistic regression since there are more than 2 labels. 
-
 We chose logistic regression because of the following reasons:
 
 1. Simplicity: It's easy to implement, and is also one of the first models we learnt in class. 
@@ -153,19 +172,7 @@ While this would look like the model is performing well on a surface level, if w
 We can see this issue through the graph of the distribution of the data as well- the actual values have majority accidents classified as mild while the predicted values have all of them classified as that.
 ![graph.png](imgs/graph.png)
 
-### Model 2: Neural Networks
-
-Our work done can be found in the notebook `Milestone_4.ipynb`. Here is the link to this [jupyter notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_4.ipynb).
-
-For this milestone, we have decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than 85%, i.e. it should not predict only 'Mild' accidents. 
-
-#### Neural Network: 
-In the Neural Network we created, we used the following specifications and parameters:
-- 4 layers: Upon some tuning of the number of layers, we found that 4 layers was the sweet spot between efficiency and output. We also did not want to overfit our training data, so we decided to keep the number of layers relatively low. 
-- Sigmoid activation functions in hidden layers: We tuned our hyperparameters to find that this worked best as an activation function in our three hidden layers. A sigmoid activation function is simple enough for efficient runtime, and works well with classification problems. Our hidden layers have 64, 32, and 16 units respectively, to allow the data to scale down for our final output layer
-- Softmax activation function in output layer: Since our output is a multinomial classification, we found that softmax was the best activation function to match the results we wanted. We used three units in our output layer, since our model is supposed to classify into three classes: 'Mild', 'Severe', and 'Fatal'.
-- Adam optimizer: We used Adam over SGD as our optimizer because it is better suited for large datasets, and converges faster without any tradeoff accuracy-wise.
-- Sparse categorical crossentropy loss: We used  "Sparse Categorical Crossentropy" as our loss function because it allows for the data to not be one-hot encoded (which aligns with our preprocessed data) and optimizes for minimized loss across all three classes. We found from past work that using optimization functions such as mse would not work as efficiently with multiple classes. 
+### Model 2
 
 We decided to use a Neural Network as it seemed the logical next step from a regression model, and it can work with classification problems pretty well. Our model analyses the given data (42 columns) and outputs 0 is the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass classification since there are more than 2 labels. 
 
@@ -207,14 +214,8 @@ All 3 accuracies appear to be close to each other (around 85%). However, looking
 
 While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The precision scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0.31 and 0.13 respectively, as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. However, there are still large issues. Though the model predicts values from classes 'Severe' and 'Fatal', it does not do so nearly as accurately as it should, as shown in the graphs above. The bias in our data, though countered slightly by the complexity of our model, is still highly relevant. Additionally, there are still improvements to be made vis a vis accuracy - we will work towards improving this in our next model. 
 
-### Model 3: Support Vector Machines
 
-TODO: Work for SVM's here...
 
-## Results
-
-Results section. This will include the results from the methods listed above (C). You will have figures here about your results as well.
-No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
 
 ## Discussion
 
