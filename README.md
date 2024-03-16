@@ -299,7 +299,7 @@ In this project, we tried to predict the severity of road accidents using variou
 
 Our data exploration provided valuable insights into the distribution of accidents, correlations between different features, and key trends such as accidents by light conditions and variations over time. Preprocessing steps including encoding categorical features and normalizing numerical ones were essential for preparing the data for modeling. Our classification models showed promise, although improvements in accuracy are still necessary.
 
-Our next steps involve further exploring SVMs and Decision Trees to compare their performance with the models we already created. We aspire to get a better understanding of a range of classification models and further mastering the skill of multinomial classification. Moreover, addressing the bias in our dataset, especially the overrepresentation of mild accidents, is crucial for enhancing model accuracy. This may involve implementing techniques such as oversampling.
+Our next steps involve further exploring SVMs and Decision Trees to compare their performance with the models we already created. We aspire to get a better understanding of a range of classification models and further mastering the skill of multinomial classification. Moreover, addressing the bias in our dataset, especially the overrepresentation of mild accidents, is crucial for enhancing model accuracy. This may involve implementing techniques such as data augmentation.
 
 
 ## Collaboration
