@@ -1,7 +1,7 @@
 
 
-[![Alt text](image_url)](link_url)
 [![banner.png](imgs/github_banner.png)](https://accidentseverityprediction.streamlit.app/)
+Click on this image to go to our website!
 <p align="center">
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
@@ -360,16 +360,22 @@ Analysis of Results:
 While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The precision scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0.31 and 0.13 respectively, as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. However, there are still large issues. Though the model predicts values from classes 'Severe' and 'Fatal', it does not do so nearly as accurately as it should, as shown in the graphs above. The bias in our data, though countered slightly by the complexity of our model, is still highly relevant. Additionally, there are still improvements to be made vis a vis accuracy - we will work towards improving this in our next model. Once again, we make the conclusion that no major underfitting or overfitting that can be observed, since all three accuracies are in very close proximity to each other.
 
 ### Model 3: Random Forest Discussion
-We performed scaling on our model before we moved forward with actual model implementation. We chose to use standardization as our preprocessing technique due to the following reasons:
 
-We chose a Random Forest for the following reasons:
-- High Accuracy: Random Forests generally have higher accuracy compared to single decision trees.
-- Robustness: Based on our research, Random Forests tend to be resistant to overfitting, especially with a large number of trees.
-- Efficiency: They are efficient for large data sets with higher dimensionality.
+We decided to first start off by using SVMs (Support Vector Machine) to work on the previous drawbacks we had, which consisted of a biased form of the data towards 'Mild' accidents. We tried creating a SVM which gave us similar results to the one that the previous Neural Network. To overcome this, we tried using oversampling and adding weights to the model; while this made the model recognize the other two categories, it dragged the accuracy to be very low. Further, we tried to hyper-parameter tune it using Gridsearch, but the accuracy was still as low as 50%. The runtime of this was also an issue. 
 
-The reason we chose the parameters that we did is outlined above - we performed hyperparameter tuning using a grid search, and found that these were the most optimal. Since we did not know much about Random Forests beforehand, we thought this was the optimal approach to the problem. 
+Finally, to overcome all these challenges we decided to use Decision Trees in the form of a Random Forest, since our data is skewed to one category and runtime was an issue. To tackle the issue regarding the imbalance we used a balanced random forest since they are known to work the best for: 
+- Imbalanced Data Handling: While traditional random forest models can struggle with imbalanced datasets where one class significantly outnumbers the other, balanced random forests address this issue by adjusting the class weights or sampling techniques to give more weight to the minority class, thus ensuring that the model learns from both classes effectively.
+- Efficiency: Balanced Random Forests are efficient for large data sets with higher dimensionality.
+- Improved Generalization: By providing better representation of minority class samples during training, balanced random forests can improve the model's ability to generalize to unseen data, especially for imbalanced datasets where the minority class is of particular interest. This leads to higher accuracy. 
 
-Analysis of Results: This model appears to be running worse than our previous models, with accuracies of 78% and 77%. However, it is also important to note that it is performing binary classification, as we wanted the predictions for Severe and Fatal to be higher in number - this was a problem we faced in previous models. We can see in the classification reports and confusion matrices that this change is definitely noticed (as the precision and recall categories are much higher than in other models), but we also see that the cost is a severe drop in accuracy - when it comes to people's lives, the difference of 7% is very large. As a result of running this model, we now realize that it is acceptable that our models are skewed as the data is, since it simply represents the reality of the situation. Based on the accuracies observed, we can say that there are no major signs of overfitting (since they are relatively equal). 
+The reason we chose the parameters that we did is due to us hyperparameter tuning our model using a grid search. We found that these parameters were the most optimal. Since we did not know much about Random Forests beforehand, we thought this was the optimal approach to the problem. 
+
+Random Forests did make the accuracy better but we saw that almost none of our data is there for 'Fatal'. Now, we tried using SMOTE to oversample our data but realized that this makes the confusion matrix completely the opposite and severely biased towards 'Fatal', which is definitely a problem as it does not reflect the reality. After all this, we came to the conclusion that this dataset is incomplete and decided to get rid of 'Fatal' as a category. To do so, we combined the data for Fatal and Severe to be one and decided to treat it all as Severe due to the lack of data we had. Doing so we got a better split among the data in 'Mild' and 'Severe'. 
+
+Analysis of Results: This model appears to be running worse than our previous models, with accuracies of TODO and TODO. However, it is also important to note that it is performing binary classification, as we wanted the predictions for Severe and Fatal to be higher in number - this was a problem we faced in previous models. We can see in the classification reports and confusion matrices that this change is definitely noticed (as the precision and recall categories are much higher than in other models), but we also see that the cost is a severe drop in accuracy - when it comes to people's lives, the difference of TODO% is very large. As a result of running this model, we now realize that it is acceptable that our models are skewed as the data is, since it simply represents the reality of the situation. Based on the accuracies observed, we can say that there are no major signs of overfitting (since they are relatively equal).
+
+### Final Model
+Based on the results we have seen, the model that performs the best in terms of accuracy and resistance to bias (weighting both based on the results and analyses we have made) is the Neural Network. This is the model that we have decide to continue with in future applications of this project, and we have deployed it on our web app as well. 
 
 ## Conclusion and Future Steps
 
