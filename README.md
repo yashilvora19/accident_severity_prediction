@@ -264,15 +264,33 @@ All 3 accuracies appear to be close to each other (around 85%). However, looking
 When looking at the results, it is important to remember that this machine was performing binary classification. Thus, we have one classification report and one confusion matrix. 
 
 The accuracy of our Random Forest model came out to be 78% and 77% for our Training and Testing data respectively. Other parameters such as precision and recall can be seen in the below classification reports and confusion matrices: 
-Training classification report: TODO
-Testing classification report: TODO
-Training Confusion Matrix: TODO
-Testing Confusion Matrix: TODO
+
+
+**Training classification report:**
+
+![dt_cr_train](imgs/dt_classification_report_train.png)
+
+**Testing classification report:**
+
+![dt_cr_test](imgs/dt_classification_report_test.png)
+
+**Training Confusion Matrix:**
+
+![cm_train](imgs/dt_cm_train.png)
+
+**Testing Confusion Matrix:**
+
+![cm_test](imgs/dt_cm_test.png)
+
+
 
 We also plotted the frequency of our actual and predicted values, as shown above for the other models:
-TODO
 
-Since the training and testing data are pretty close to each other, we can say that there are no major signs of overfitting. 
+![dtcounts0](imgs/dt_counts_0.png)
+
+![dtcounts1](imgs/dt_counts_1.png)
+
+Since the training and testing data are pretty close to each other, we can say that there are no major signs of overfitting.
 
 ## Discussion
 
