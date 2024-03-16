@@ -94,6 +94,10 @@ st.markdown(
      - Fatal.
     """
     )
+# st.image('../imgs/mild.png', caption='Mild Accident Graphic')  
+# st.image('../imgs/severe.jpg', caption='Severe Accident Graphic')
+# st.image('../imgs/fatal.jpg', caption='Fatal Accident Graphic')
+
 
 clicked = st.button('Predict Accident Severity')
 # """
@@ -170,18 +174,18 @@ if clicked:
 
     final_input = input_encoded.reshape(1,-1)
 
-    input = np.zeros((1,42))
     out = model.predict(final_input.astype(float))
 
     if np.argmax(out) == 0:
         severity = 'Mild'
+        st.image('../imgs/mild.png', caption='Mild Accident Graphic')  
     elif np.argmax(out) == 1:
         severity = 'Severe'
+        st.image('../imgs/severe.jpg', caption='Severe Accident Graphic')
     else:
         severity = 'Fatal'
+        st.image('../imgs/fatal.jpg', caption='Fatal Accident Graphic')
 
     st.write("Results")
     st.success("Data processed successfully. Here's the accident severity: " + severity)
-    st.balloons()
-
-    del input
+    # st.balloons()
