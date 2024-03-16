@@ -1,7 +1,7 @@
 
 
 [![banner.png](imgs/github_banner.png)](https://accidentseverityprediction.streamlit.app/)
-Click on this image to go to our website!
+## Click on this image to go to our website and test our model!
 <p align="center">
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
