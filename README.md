@@ -161,7 +161,16 @@ In the Neural Network we created, we used the following specifications and param
 
 ### Model 3: Random Forests
 
-For the next step of our project, we will be leveraging a Random Forest model to train on our data and try implementing a few machine learning techniques in order to boost the accuracy.
+Our work done can be found in the jupyter notebook `Milestone_5.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_5.ipynb). 
+
+For the next step of our project, we will be leveraging a Random Forest model to train on our data and try implementing a few machine learning techniques in order to boost the accuracy. Our aim with this was to overcome the bias that we ran into in the previous models (outlined below in Discussion section). To overcome this bias, we decided to combine labels "Severe" and "Fatal" into one single label, making the model a binary classifier. 
+
+#### Random Forest:
+
+To build our Random Forest, we used imblearn's BalancedRandomForestClassifier. We used the following parameters:
+- Number of estimators: 100
+- Class Weight: Balanced Subsample
+
 
 ## Results
 
@@ -252,8 +261,18 @@ All 3 accuracies appear to be close to each other (around 85%). However, looking
 
 ### Model 3: Random Forest Results
 
-For the next step of our project, we decided to run an Random Forest model. For this, we tried a variety of strategies 
+When looking at the results, it is important to remember that this machine was performing binary classification. Thus, we have one classification report and one confusion matrix. 
 
+The accuracy of our Random Forest model came out to be 78% and 77% for our Training and Testing data respectively. Other parameters such as precision and recall can be seen in the below classification reports and confusion matrices: 
+Training classification report: TODO
+Testing classification report: TODO
+Training Confusion Matrix: TODO
+Testing Confusion Matrix: TODO
+
+We also plotted the frequency of our actual and predicted values, as shown above for the other models:
+TODO
+
+Since the training and testing data are pretty close to each other, we can say that there are no major signs of overfitting. 
 
 ## Discussion
 
@@ -323,7 +342,16 @@ Analysis of Results:
 While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The precision scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0.31 and 0.13 respectively, as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. However, there are still large issues. Though the model predicts values from classes 'Severe' and 'Fatal', it does not do so nearly as accurately as it should, as shown in the graphs above. The bias in our data, though countered slightly by the complexity of our model, is still highly relevant. Additionally, there are still improvements to be made vis a vis accuracy - we will work towards improving this in our next model. Once again, we make the conclusion that no major underfitting or overfitting that can be observed, since all three accuracies are in very close proximity to each other.
 
 ### Model 3: Random Forest Discussion
-TODO
+We performed scaling on our model before we moved forward with actual model implementation. We chose to use standardization as our preprocessing technique due to the following reasons:
+
+We chose a Random Forest for the following reasons:
+- High Accuracy: Random Forests generally have higher accuracy compared to single decision trees.
+- Robustness: Based on our research, Random Forests tend to be resistant to overfitting, especially with a large number of trees.
+- Efficiency: They are efficient for large data sets with higher dimensionality.
+
+The reason we chose the parameters that we did is outlined above - we performed hyperparameter tuning using a grid search, and found that these were the most optimal. Since we did not know much about Random Forests beforehand, we thought this was the optimal approach to the problem. 
+
+Analysis of Results: This model appears to be running worse than our previous models, with accuracies of 78% and 77%. However, it is also important to note that it is performing binary classification, as we wanted the predictions for Severe and Fatal to be higher in number - this was a problem we faced in previous models. We can see in the classification reports and confusion matrices that this change is definitely noticed (as the precision and recall categories are much higher than in other models), but we also see that the cost is a severe drop in accuracy - when it comes to people's lives, the difference of 7% is very large. As a result of running this model, we now realize that it is acceptable that our models are skewed as the data is, since it simply represents the reality of the situation. Based on the accuracies observed, we can say that there are no major signs of overfitting (since they are relatively equal). 
 
 ## Conclusion and Future Steps
 
