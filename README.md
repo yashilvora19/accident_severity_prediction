@@ -326,12 +326,17 @@ TODO
 
 ## Conclusion and Future Steps
 
-In this project, we tried to predict the severity of road accidents using various supervised machine learning models. We explored Logistic Regression, Neural Networks, and began to delve into SVMs, aiming to classify accidents into categories of 'Mild', 'Severe', and 'Fatal'.
+In this project, we tried to predict the severity of road accidents using various supervised machine learning models. We explored Logistic Regression, Neural Networks, and began to delve into Random Forests, aiming to classify accidents into categories of 'Mild', 'Severe', and 'Fatal'.
 
-Our data exploration provided valuable insights into the distribution of accidents, correlations between different features, and key trends such as accidents by light conditions and variations over time. Preprocessing steps including encoding categorical features and normalizing numerical ones were essential for preparing the data for modeling. Our classification models showed promise, although improvements in accuracy are still necessary.
+Our data exploration provided valuable insights into the distribution of accidents, correlations between different features, and key trends within the data. Preprocessing steps including encoding categorical features and normalizing numerical ones were essential for preparing the data for modeling. 
 
-Our next steps involve further exploring SVMs and Decision Trees to compare their performance with the models we already created. We aspire to get a better understanding of a range of classification models and further mastering the skill of multinomial classification. Moreover, addressing the bias in our dataset, especially the overrepresentation of mild accidents, is crucial for enhancing model accuracy. This may involve implementing techniques such as data augmentation.
+Upon running the models, we found that most models have the same major flaw - that most accidents are classified as Mild. This is not a major issue in our opinion, as most accidents in the real world (and indeed in our dataset) are Mild. Attempts to remedy this and make our model classify more accidents as Severe and Fatal led us to realize that our model would not accurately portray the real world. 
 
+Out of all the models we ran, we conclude that the most outstanding accuracy was portrayed by our Neural Network. Thus, this is the model that we have deployed on our web app and this is the model that we will be working forward with as we continue this project throughout the course of our education (and potentially further). Given that it displayed the highest accuracy while having the best tradeoffs between efficiency and complexity, we believe that this is the best possible model we could have tried within the scope of this project.
+
+Going forward, our next steps involve scaling our project further - now that we have tuned a model to work with, we will perfect this by pouring a lot more time into scrutinizing and tweaking our model's performance. The bias in our dataset is definitely still a consideration, but one that can be combatted with the input of more data. To this end, we have reached out to the San Diego Police Department to see if they are willing to provide accident data from the City of San Diego with us. Hopefully, this will allow us to extend the functionality of our model to San Diego, and make a difference where it matters most to us. 
+
+When we started this project, we aspired to get a better understanding of a range of classification models and working seamlessly in a collaborative environment. Now that our project draws to a close (within the purposes of this class, at least), we can confidently state that we have achieved these goals beyond measures of what we originally intended. It has been an arduous but ultimately fruitful journey that we are all grateful for. 
 
 ## Collaboration
 
