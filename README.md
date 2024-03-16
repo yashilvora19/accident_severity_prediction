@@ -36,14 +36,13 @@
 </p>
 
 
+# Strategizing Safety : Predicting Road Accident Severity for Effective Prevention
 
 # Members
 Arnav Kamdar,
 Ishika Agrawal,
 Mishka Jethwani,
 Yashil Vora
-
-# Strategizing Safety : Predicting Road Accident Severity for Effective Prevention
 
 ## Table of Contents
 
@@ -129,8 +128,7 @@ We then plotted different types of graphs to gain a deeper understanding of our 
 ### Preprocessing Steps
 Our work done can be found in the notebook `Data_Cleaning_and_EDA_Final.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Data_Cleaning_and_EDA_Final.ipynb).
 
-TODO: Talk about null drops?
-We began preprocessing the data by one-hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`). For the `Light_Conditions` attribute, we chose an ordinal approach, encoding it from 0, for Dark, to 3, for Daylight. We selected a MultiBinarizer to conduct multiple one-hot encoding for each row under `Weather Conditions` as multiple categories could be satistified simultaneously. Then we chose to normalize the `Latitude` and `Longitude` to make it a more standardized value. We left the `Number_of_Casualties` and `Number_of_Vehicles` columns as they were, as the values were just integers and seemed to have no large outliers.
+Our first step in preprocessing the data was dropping rows with null values. We found that of all the rows in our data, this proved a negligible number, so we decided to drop this data with the confidence that it would have no tangible effect on the output of our model. We continued preprocessing the data by one-hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`). For the `Light_Conditions` attribute, we chose an ordinal approach, encoding it from 0, for Dark, to 3, for Daylight. We selected a MultiBinarizer to conduct multiple one-hot encoding for each row under `Weather Conditions` as multiple categories could be satistified simultaneously. Then we chose to normalize the `Latitude` and `Longitude` to make it a more standardized value. We left the `Number_of_Casualties` and `Number_of_Vehicles` columns as they were, as the values were just integers and seemed to have no large outliers.
 
 ### Model 1: Logistic Regression
 
@@ -155,13 +153,11 @@ For this milestone, we decided to run a Neural Network on our data. The aim is t
 
 #### Neural Network: 
 In the Neural Network we created, we used the following specifications and parameters:
-
-TODO: Is this supposed to go into the discussion part?
-- 4 layers: Upon some tuning of the number of layers, we found that 4 layers was the sweet spot between efficiency and output. We also did not want to overfit our training data, so we decided to keep the number of layers relatively low. 
-- Sigmoid activation functions in hidden layers: We tuned our hyperparameters to find that this worked best as an activation function in our three hidden layers. A sigmoid activation function is simple enough for efficient runtime, and works well with classification problems. Our hidden layers have 64, 32, and 16 units respectively, to allow the data to scale down for our final output layer. 
-- Softmax activation function in output layer: Since our output is a multinomial classification, we found that softmax was the best activation function to match the results we wanted. We used three units in our output layer, since our model is supposed to classify into three classes: 'Mild', 'Severe', and 'Fatal'.
-- Adam optimizer: We used Adam over SGD as our optimizer because it is better suited for large datasets, and converges faster without any tradeoff accuracy-wise.
-- Sparse categorical crossentropy loss: We used  "Sparse Categorical Crossentropy" as our loss function because it allows for the data to not be one-hot encoded (which aligns with our preprocessed data) and optimizes for minimized loss across all three classes. We found from past work that using optimization functions such as mse would not work as efficiently with multiple classes. 
+- 4 layers 
+- Sigmoid activation functions in hidden layers 
+- Softmax activation function in output layer
+- Adam optimizer
+- Sparse categorical crossentropy loss 
 
 ### Model 3: SVMs
 
@@ -173,7 +169,7 @@ For the next step of our project, we will be leveraging a Support Vector Machine
 Through the heatmap and pair-plot we had decided to plot, we were able to see trends and patterns. These were corroborated by a few more visualizations of specific trends: light intensities vs number of accidents, number of casualties vs number of vehicles, and number of accidents vs time (over a span of 4 years). 
 
 The pair-plot we created is given below. Through this pairplot, we can see the clear relation between latitude and longitude since the data maps out across the United Kingdom.
-We can also see a correlation between the year and number of casualties, since the number of casualties decreases per year (good job, UK traffic police! (TODO: I added this lol remove it if you want)). There also seem to be correlations between the latitude/longitude and the number of casualties/accidents. 
+We can also observe no significant correlation between the year and number of casualties, discussed later below. There also seem to be correlations between the latitude/longitude and the number of casualties/accidents. 
 ![pairplot](imgs/pairplot.png)
 
 Next, we plotted a heatmap - we can see that the highest correlation coefficient that Accident Severity has is with Number of Casualties, at 0.088 . 
@@ -216,12 +212,11 @@ Further evaluations on the performance of the model have been done within the fi
 The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and 85.26% for our Training, Testing and Validation data. Other parameters such as recall, precision and support can be seen below in the classification reports.
 ![accuracy](imgs/accuracy.png)
 
-We also plotted the frequency of our actual and predicted values.
+We also plotted the frequency of our actual and predicted values. The reason for this will become clear when we analyze our data.
 ![freq1](imgs/freq1.png)
 ![freq2](imgs/freq2.png)
 
-TODO: what issue?? we clearly missed something here. 
-We can see this issue through the graph of the distribution of the data as well- the actual values have majority accidents classified as mild while the predicted values have all of them classified as that.
+Finally, we plotted a scatter plot for our coefficients, to display which coefficients have the most bearing on the output. 
 ![graph.png](imgs/graph.png)
 
 Since all 3 accuracies are close to each other (around 85%), and simultaneously the mean squared error is also close (around 0.18), we can say that there is no major underfitting or overfitting that can be observed.
@@ -263,38 +258,38 @@ For the next step of our project, we decided to run an SVM model. For this, we t
 ## Discussion
 
 ### Data Exploration Discussion 
-For this we decided to start with a heatmap and a pairplot to get a basic understanding of how the data is. After generating the pairplot we found that there is a  clear relation between latitude and longitude. Further, we can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This includes lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
+For this we decided to start with a heatmap and a pairplot to get a basic understanding of how the data is. After generating the pairplot we found that there is a clear relation between latitude and longitude. Further, we can also see a correlation between year and number of casualties, since the number of casualties decreases per year. As shown above, there also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This includes lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
 
-Next, by generating a heatmap we came to the concusion that  there is an extremely low correlation between Accident Severity and all other columns. As seen earlier,  the highest correlations is with Number of Casualties, at 0.088. However, it should be noted that this doesn't mean that there isn't a connection between our input and output. 
+Next, by generating a heatmap we came to the concusion that  there is an extremely low correlation between Accident Severity and all other columns. As seen earlier,  the highest correlations is with Number of Casualties, at 0.088. However, it should be noted that this doesn't mean that there isn't a connection between our input and output - multiple features may be simultaneously influencing the output.
 
 After plotting the basic graphs we wanted to explore the data more so we decided to plot some more graphs and found three to have very intresting insights. 
-1. Accidents by Light Conditions
-Intuitively, we would have thought that a lot of accidents happen during the darkness. However, through this barplot, this is false. The maximum number of accidents happen in the daylight as we have seen earlier. A possible reason for this could be that drivers are more reckless and speed more during when there is daylight, but are more careful in the dark.
+1. Accidents vs Light Conditions: 
+Intuitively, we would have thought that a lot of accidents happen during the darkness. However, through this barplot, this is false. The maximum number of accidents happen in the daylight as we have seen earlier. A possible reason for this could be that the number of drivers during the day is much higher, so statistically the number of accidents will also be higher.
 
-2.. Accidents over Time
+2. Accidents vs Time: 
 We saw that there is not much variance in the accidents that happen through the years. While, there are some timings during the year that have had more accidents these seem to be repeating. A possible reason of this could be more people going out dueing vacations, increase in activity during festivals etc. However, there is no change in the number of accidents over the years this shows that no significant improvements have been made recently to make it safer and prevent accidents making this project even more important.
 
-3. Number of Vehicles V/S Number of Casualities
-Like we would have expected, more the number of behicals are involved in an accident, more the peeple are at danger ultimately resulting in more casualities.
+3. Number of Vehicles vs Number of Casualities: 
+Like we would have expected, more the number of vehicles are involved in an accident, more the peeple are at danger ultimately resulting in more casualties.
 
 ### Preprocessing Discussion
 
 #### Categorical Features
 
-Encoding categorical features is crucial for machine learning models as they typically require numerical inputs. One-hot encoding allows for the representation of categorical variables without imposing an arbitrary order, while ordinal encoding preserves the order inherent in certain features like Light_Conditions.
-The use of MultiBinarizer for Weather Conditions was justified due to the presence of multiple categories per row. This approach enabled us to capture the variability in weather conditions without introducing excessive dimensionality into the dataset.
+Encoding categorical features is crucial for machine learning models as they typically require numerical inputs. One-hot encoding allows for the representation of categorical variables without imposing an arbitrary order, while ordinal encoding preserves the order inherent in certain features like `Light_Conditions`.
+The use of MultiBinarizer for `Weather_Conditions` was justified due to the presence of multiple categories per row. This approach enabled us to capture the variability in weather conditions without introducing excessive dimensionality into the dataset.
 
 #### Numerical Features
 
-Scaling numerical features is essential to prevent features with large magnitudes from dominating those with smaller magnitudes during model training. Normalization, as applied to Latitude and Longitude, ensures that all features contribute equally to the learning process, thereby improving model performance.
-Normalization of Latitude and Longitude is particularly beneficial in geospatial analyses, as it allows for more meaningful comparisons between geographical locations.
+Scaling numerical features is essential to prevent features with large magnitudes from dominating those with smaller magnitudes during model training. Normalization, as applied to `Latitude` and `Longitude`, ensures that all features contribute equally to the learning process, thereby improving model performance.
+Normalization of Latitude and Longitude is particularly beneficial from a geographical standpoint, as it allows for more meaningful comparisons between geographical locations.
 
 #### Feature Retention
 
-Retaining Number_of_Casualties and Number_of_Vehicles without transformation was deemed appropriate due to their direct relevance to the study objective. These features provide crucial information about the severity and complexity of accidents, making them indispensable for predictive modeling.
+Retaining `Number_of_Casualties` and `Number_of_Vehicles` without transformation was deemed appropriate due to their direct relevance to the study objective. These features provide crucial information about the severity and complexity of accidents, making them indispensable for predictive modeling.
 
 ### Model 1: Logistic Regression Discussion
-We performed Standardzation on our model before we moved forward with actual model implementation. We chose to use standardization as our preprocessing technique due to the following reasons:
+We performed Standardization on our model before we moved forward with actual model implementation. We chose to use standardization as our preprocessing technique due to the following reasons:
 1. Our data didn't follow a normal distribution, hence standardizing it was imperative in order to get accurate results.
 2. Maining the relationship between datapoints is also important, and since standardization doesn't distort our data distribution, it works well for preprocessing.
 3. Standardization also takes into account outliers, which will again make our model better.
@@ -304,7 +299,7 @@ We chose logistic regression because of the following reasons:
 2. Efficiency: It is known to be a very popular classification model for categorical data, which is what we are focusing on. It is also very fast.
 3. Accuracy: It also provides a probability for each outcome, which makes it easier to understand how confident the model is in its predictions.
 
-Conclusion: 
+Analysis of Results: 
 While this would look like the model is performing well on a surface level, if we take a look at the classification reports and the confusion matrix plotted, we can clearly see that there are definitely issues with this model! The recall scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0. This means that we are rarely predicting those values and 'Mild' accidents are being predicted the most. It is also worth noting that in our dataset, majority of the accidents our mild and this could result in a bias in the data. Due to this bias, it is reasonable to assume that our logistic regression model is biased too and there can be a lot of improvements that can be made here.
 
 ### Model 2: Neural Network Discussion
@@ -316,7 +311,14 @@ Following are some advantages of a Neural Network over the previous models we ha
 - Having different nodes and activation functions allows us a greater insight into the relationships between variables.
 - Neural Networks additionally give us the chance to tune our hyperparameters, allowing us to optimize manually for the greatest efficiency across both training and testing data.
 
-Conclusion: 
+Following are our reasons for choosing the parameters we did in the Neural Network:
+- 4 layers: Upon some tuning of the number of layers, we found that 4 layers was the sweet spot between efficiency and output. We also did not want to overfit our training data, so we decided to keep the number of layers relatively low. 
+- Sigmoid activation functions in hidden layers: We tuned our hyperparameters to find that this worked best as an activation function in our three hidden layers. A sigmoid activation function is simple enough for efficient runtime, and works well with classification problems. Our hidden layers have 64, 32, and 16 units respectively, to allow the data to scale down for our final output layer. 
+- Softmax activation function in output layer: Since our output is a multinomial classification, we found that softmax was the best activation function to match the results we wanted. We used three units in our output layer, since our model is supposed to classify into three classes: 'Mild', 'Severe', and 'Fatal'.
+- Adam optimizer: We used Adam over SGD as our optimizer because it is better suited for large datasets, and converges faster without any tradeoff accuracy-wise.
+- Sparse categorical crossentropy loss: We used  "Sparse Categorical Crossentropy" as our loss function because it allows for the data to not be one-hot encoded (which aligns with our preprocessed data) and optimizes for minimized loss across all three classes. We found from past work that using optimization functions such as mse would not work as efficiently with multiple classes. 
+
+Analysis of Results: 
 While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The precision scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0.31 and 0.13 respectively, as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. However, there are still large issues. Though the model predicts values from classes 'Severe' and 'Fatal', it does not do so nearly as accurately as it should, as shown in the graphs above. The bias in our data, though countered slightly by the complexity of our model, is still highly relevant. Additionally, there are still improvements to be made vis a vis accuracy - we will work towards improving this in our next model. 
 
 ### Model 3: SVMs Discussion
