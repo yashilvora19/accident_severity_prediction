@@ -80,11 +80,34 @@ Our data is primarily focused on locations in the United Kingdom, so while it ma
 
 There are some ethical concerns posed with this model - if our stakeholders were vehicle companies, would they have reduced sales if, say, trucks were more likely to lead to severe accidents? However, by figuring out what would predict the severity of road accidents, we can also prevent harm by noting the features that largely impact the severity. The aim with this project is to advise people when conditions are likely to get them into more extreme car crashes.
 
-## Try The Model On Our Webapp
+## Try The Model On Our Webapp!
 
-We built a webapp to demonstrate our work and let you play around with our model. You can find our journey and test our model in more detail [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ)!
 
-TODO
+To take our step one project ahead, we decided to deploy our model on a webapp that can be used by anyone to test it out!
+
+Additionally, we also sent an email to the San Diego Police Department (SDPD) to express our goal of improving road safety in San Diego and requested access to data regarding accidents documented over the past years.
+
+Our webapp is live on this [link](https://accidentseverityprediction.streamlit.app/)!
+
+Feel free to look at our rationale and next steps for this project in more detail and try out our model by playing around with the different parameters!
+
+Here are a few screenshots of our website:
+
+![website1](imgs/test1.png)
+
+![website2](imgs/test2.png)
+
+![website3](imgs/test3.png)
+
+![ack](imgs/acknowledgements.png)
+
+
+Here is a screenshot of our email to SDPD:
+
+![email](imgs/email_draft.jpeg)
+
+
+We deployed this model to a webapp using Streamlit. Streamlit is a Python library made specifically for deploying ML models to websites to display the work of the people building it and allowing users to test it out! We hope you enjoy looking at our work and help us make this model better!
 
 ## Methods
 
@@ -306,3 +329,17 @@ Our next steps involve further exploring SVMs and Decision Trees to compare thei
 
 
 ## Collaboration
+
+This project was a great learning outcome for all of us and while we had our fair share of ups and downs, we pushed ourselves to produce a project that we can say that we are proud of!
+
+Initially, our group had 8 members- however, over the first few weeks, 4 of the members dropped the class and we were worried about whether we would be able to output a good quality project. However, over the remaining course of the quarter, we worked hard together to pick up on the work and even went as far as deploying our model on a webapp (source code can be found in the `src` directory), tried different strategies like oversampling, adding weights, and using other techniques learnt in class to improve our model accuracy, and came up with a model that makes predictions with a reasonably good accuracy, precision and recall.
+
+Within the 4 of us, we alternated between the programming and writing our work to the README over the different milestones. 
+
+Ishika Agrawal: Worked on building the neural network model, working on hyperparameter tuning it, and organizing our README and testing out our SVM model. ALSO 
+
+Arnav Kamdar: Worked on logistic regression, SVM's and Decision Trees (testing and evaluating performance) organizing the README for the different milestones
+
+Mishka Jethwani: Worked majorly on organizing our README and hyperparameter tuning and model building for SVM's and Decision Trees.
+
+Yashil Vora: Worked majorly on Data Preprocessing and EDA, Logistic Regression, and Neural Netorks along with organzing the README and creating the webapp. 
