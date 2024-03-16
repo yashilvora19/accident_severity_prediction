@@ -1,5 +1,7 @@
 
-![banner.png](imgs/github_banner.png)
+
+[![Alt text](image_url)](link_url)
+[![banner.png](imgs/github_banner.png)](https://accidentseverityprediction.streamlit.app/)
 <p align="center">
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
@@ -163,7 +165,7 @@ TODO: Is this supposed to go into the discussion part?
 
 ### Model 3: SVMs
 
-TODO: Work for SVM's here...
+For the next step of our project, we will be leveraging a Support Vector Machine (SVM) model to train on our data and try implementing a few machine learning techniques in order to boost the accuracy.
 
 ## Results
 
@@ -254,7 +256,8 @@ Additionally, in our previous work we found that a Logistic Regression fails to 
 All 3 accuracies appear to be close to each other (around 85%). However, looking at the graph for validation accuracy, we see that it is gradually decreasing across epochs. This shows signs of minor overfitting, but since the overall accuracy drops by a very low percentage, it can be neglected.
 
 ### Model 3: SVMs Results
-TODO
+
+For the next step of our project, we decided to run an SVM model. For this, we tried a variety of strategies 
 
 
 ## Discussion
