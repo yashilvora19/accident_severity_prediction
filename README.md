@@ -159,9 +159,9 @@ In the Neural Network we created, we used the following specifications and param
 - Adam optimizer
 - Sparse categorical crossentropy loss 
 
-### Model 3: SVMs
+### Model 3: Random Forests
 
-For the next step of our project, we will be leveraging a Support Vector Machine (SVM) model to train on our data and try implementing a few machine learning techniques in order to boost the accuracy.
+For the next step of our project, we will be leveraging a Random Forest model to train on our data and try implementing a few machine learning techniques in order to boost the accuracy.
 
 ## Results
 
@@ -250,9 +250,9 @@ Additionally, in our previous work we found that a Logistic Regression fails to 
 
 All 3 accuracies appear to be close to each other (around 85%). However, looking at the graph for validation accuracy, we see that it is gradually decreasing across epochs. This shows signs of minor overfitting, but since the overall accuracy drops by a very low percentage, it can be neglected.
 
-### Model 3: SVMs Results
+### Model 3: Random Forest Results
 
-For the next step of our project, we decided to run an SVM model. For this, we tried a variety of strategies 
+For the next step of our project, we decided to run an Random Forest model. For this, we tried a variety of strategies 
 
 
 ## Discussion
@@ -321,7 +321,7 @@ Following are our reasons for choosing the parameters we did in the Neural Netwo
 Analysis of Results: 
 While the model appears to perform only marginally better than the logistic regression model previously created, if we take a look at the classification reports and the confusion matrix plotted, we see some clear advantages. The precision scores for classes 1 and 2 (or 'Severe' and 'Fatal') accidents are 0.31 and 0.13 respectively, as opposed to the 0s we saw in logistic regression. This means that we are actually obtaining predictions for those values, which is a clear improvement over the last model. However, there are still large issues. Though the model predicts values from classes 'Severe' and 'Fatal', it does not do so nearly as accurately as it should, as shown in the graphs above. The bias in our data, though countered slightly by the complexity of our model, is still highly relevant. Additionally, there are still improvements to be made vis a vis accuracy - we will work towards improving this in our next model. 
 
-### Model 3: SVMs Discussion
+### Model 3: Random Forest Discussion
 TODO
 
 ## Conclusion and Future Steps
@@ -346,10 +346,10 @@ Initially, our group had 8 members- however, over the first few weeks, 4 of the 
 
 Within the 4 of us, we alternated between the programming and writing our work to the README over the different milestones. 
 
-Ishika Agrawal: Worked on building the neural network model, working on hyperparameter tuning neural network and SVM, and organizing our README and testing out our SVM model.  
+Ishika Agrawal: Worked on building the neural network model, working on hyperparameter tuning neural network and Random Forest, organizing our README, and testing out our Random Forest model.  
 
-Arnav Kamdar: Worked on logistic regression, SVM's and Decision Trees (testing and evaluating performance) organizing the README for the different milestones
+Arnav Kamdar: Worked on logistic regression, Random Forests and Decision Trees (testing, evaluating, tuning, and improving performance), organizing and editing the README for the different milestones.
 
-Mishka Jethwani: Worked majorly on organizing our README and hyperparameter tuning and model building for SVM's and Decision Trees.
+Mishka Jethwani: Worked majorly on organizing our README and hyperparameter tuning and model building for Random Forests and Decision Trees. 
 
-Yashil Vora: Worked majorly on Data Preprocessing and EDA, Logistic Regression, and Neural Netorks along with organzing the README and creating the webapp. 
+Yashil Vora: Worked majorly on Data Preprocessing and EDA, Logistic Regression, and Neural Networks along with organizing the README and creating the webapp. 
