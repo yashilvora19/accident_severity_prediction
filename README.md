@@ -95,7 +95,7 @@ We made use of the pairplot and heatmap with correlation matrix in order to get 
 
 All of this collectively gave us a better idea of what the data looks like which in turn gives us a better idea of which models to use in the next step of this project.
 
-We then plotted different types of graphs to compare and visulaise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively. The different graphs we plotted were
+We then plotted different types of graphs to compare and visualise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively. The different graphs we plotted were
 
 1. Accidents by Light Conditions
 2. Accidents over Time
@@ -111,21 +111,21 @@ We already began preprocessing the data by one hot encoding most of the categori
 Our work done can be found in the notebook `Milestone_3.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone%203.ipynb).
 
 #### Logistic Regression
-In our project, we our trying to classify accidents into the following categories:
+In our project, we are trying to classify accidents into the following categories:
 1. Mild
 2. Severe
 3. Fatal
 
 Since this is a classification task, we chose logistic regression as our machine learning model.
 
-Our model analyses the given data (42 columns) and outputs 0 is the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass logistic regression since there are more than 2 labels. 
+Our model analyses the given data (42 columns) and outputs 0 if the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass logistic regression since there are more than 2 labels. 
 
 
 ### Model 2: Neural Networks
 
 Our work done can be found in the notebook `Milestone_4.ipynb`. Here is the link to this [jupyter notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_4.ipynb).
 
-For this milestone, we have decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than 85%, i.e. it should not predict only 'Mild' accidents (this was a drawback of our last model) and should try to classify the accidents as Severe and Fatal as well. 
+For this milestone, we decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than 85%, i.e. it should not predict only 'Mild' accidents (this was a drawback of our last model) and should try to classify the accidents as Severe and Fatal as well. 
 
 #### Neural Network: 
 In the Neural Network we created, we used the following specifications and parameters:
@@ -142,7 +142,7 @@ TODO: Work for SVM's here...
 ## Results
 
 ### Data Exploration Results
-Through the heatmap and pair-plot we had decided to plot we got we were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
+Through the heatmap and pair-plot we had decided to plot, we were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
 
 The pair-plot we had plotted is given below. Through this pairplot, we can see the clear relation between latitude and longitude since it maps out the shape of UK.
 We can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. 
@@ -300,5 +300,14 @@ TODO:
 This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts
 
 We now look to compare our results from this model to those of even more classification models, such as Decision Trees and SVMs. Some issues that we might encounter when doing this would be to adapt these models to multinomial classification, which is something that we have not worked with yet. We are eager for the challenge, and aspire to get a better understanding of a range of classification models. Ideally, this would improve the accuracy beyond what we have had in the past two models. This would further help us determine which one works the best for our data. 
+
+
+
+In this project, we tried to predict the severity of road accidents using various supervised machine learning models. We explored Logistic Regression, Neural Networks, and began to delve into SVMs, aiming to classify accidents into categories of 'Mild', 'Severe', and 'Fatal'.
+
+Our data exploration provided valuable insights into the distribution of accidents, correlations between different features, and key trends such as accidents by light conditions and variations over time. Preprocessing steps including encoding categorical features and normalizing numerical ones were essential for preparing the data for modeling. Our classification models showed promise, although improvements in accuracy are still necessary.
+
+Our next steps involve further exploring SVMs and Decision Trees to compare their performance with the models we already created. We aspire to get a better understanding of a range of classification models and further mastering the skill of multinomial classification. Moreover, addressing the bias in our dataset, especially the overrepresentation of mild accidents, is crucial for enhancing model accuracy. This may involve implementing techniques such as oversampling.
+
 
 ## Collaboration
