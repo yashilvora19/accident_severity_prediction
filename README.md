@@ -74,11 +74,11 @@ Yashil Vora
 
 ## Introduction
 
-One of the leading causes of non natural death is road accidents. There may be several contributing factors that lead to vehicle casualties, including traffic, weather, road conditions etc. We wanted to predict the severity of road accidents ranging from Slight, Serious, to Fatal using supervised models such as Logistic Regression, SVMs, Neural Nets, Decision Trees etc. Attributes that may be used to predict the data include the road conditions, the weather conditions, vehicle types, or what kind of area they’re in. 
+One of the leading causes of non-natural death is road accidents. There may be several contributing factors that lead to vehicle casualties, including traffic, weather, and road conditions. We wanted to predict the severity of road accidents, classifying them from Mild, Serious, or Fatal using supervised models such as Logistic Regression, SVMs, Neural Nets, Decision Trees, and more. To predict the data, we consider attributes such as road conditions, weather conditions, vehicle types, or geographical location. 
 
-Our data is mainly focused on locations in the UK, so while it may not necessarily apply similarly in the US, we could still use this model to run on US datasets and see the results. It is a dataset with 14 columns and over 600k observations, with columns including severity of accident, the date, number of casualties, longitude,  latitude, road surface conditions, road types, urban/ rural areas, weather conditions, and vehicle types.
+Our data is primarily focused on locations in the United Kingdom, so while it may not necessarily apply to the United States, we believe that this model may still useful when run on US datasets. The dataset we use has 14 columns and over 600k observations, with columns including severity of accident, the date, number of casualties, longitude,  latitude, road surface conditions, road types, urban/rural areas, weather conditions, and vehicle types.
 
-Ethical concerns consist ----- if our stakeholders were vehicle companies, would they have reduced sales if, say, trucks were more likely to lead to severe accidents? However, by figuring out what would predict the severity of road accidents, we can also prevent harm by noting the features that largely impact the severity. 
+There are some ethical concerns posed with this model - if our stakeholders were vehicle companies, would they have reduced sales if, say, trucks were more likely to lead to severe accidents? However, by figuring out what would predict the severity of road accidents, we can also prevent harm by noting the features that largely impact the severity. The aim with this project is to advise people when conditions are likely to get them into more extreme car crashes.
 
 ## Try The Model On Our Webapp
 
@@ -91,24 +91,25 @@ TODO
 ### Data Exploration 
 #### Visualization Steps
 
-We made use of the pairplot and heatmap with correlation matrix in order to get an overall sense of the distribution of data. Through this we were also able to get correlations between different features and became one with the data.
+To get an overall sense of the distribution of the data, we made use of a pairplot and heatmap using a correlation matrix. Through this we were also able to get correlations between different features, giving us a much better insight into the different features' interrelations.
 
-All of this collectively gave us a better idea of what the data looks like which in turn gives us a better idea of which models to use in the next step of this project.
+Given a much stronger idea of what the data looks like, we now had a better perspective on which models to use in the next steps of this project. 
 
-We then plotted different types of graphs to compare and visualise diffrent aspects of our data. By plotting various graphs, we aimed to gain a deeper understanding of our data and compare different attributes effectively. The different graphs we plotted were
+We then plotted different types of graphs to gain a deeper understanding of our data and compare different attributes effectively. The different graphs we plotted were
 
-1. Accidents by Light Conditions
-2. Accidents over Time
-3. Number of Vehicles V/S Number of Casualities
+1. Accidents vs Light Conditions
+2. Accidents vs Time
+3. Number of Vehicles vs Number of Casualities
 
 ### Preprocessing Steps
 Our work done can be found in the notebook `Data_Cleaning_and_EDA_Final.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Data_Cleaning_and_EDA_Final.ipynb).
 
-We already began preprocessing the data by one hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`), and for `Light_Conditions`, we chose to make it ordinal and encode it from 0 for Dark, and 3 for Daylight. We selected MultiBinarizer to do multiple one-hot encoding for each row for the `Weather Conditions` as there were multiple categories that were satistified. Then we chose to normalize the `Latitude` and `Longitude` to make it a more contained value. We left the `Number_of_Casualties` and `Number_of_Vehicles` as is, as the values were just integers and seemed to have no large outliers.
+TODO: Talk about null drops?
+We began preprocessing the data by one-hot encoding most of the categorical data (`Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, `Vehicle_Type`). For the `Light_Conditions` attribute, we chose an ordinal approach, encoding it from 0, for Dark, to 3, for Daylight. We selected a MultiBinarizer to conduct multiple one-hot encoding for each row under `Weather Conditions` as multiple categories could be satistified simultaneously. Then we chose to normalize the `Latitude` and `Longitude` to make it a more standardized value. We left the `Number_of_Casualties` and `Number_of_Vehicles` columns as they were, as the values were just integers and seemed to have no large outliers.
 
 ### Model 1: Logistic Regression
 
-Our work done can be found in the notebook `Milestone_3.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone%203.ipynb).
+Our work done for this model can be found in the jupyter notebook `Milestone_3.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_3.ipynb).
 
 #### Logistic Regression
 In our project, we are trying to classify accidents into the following categories:
@@ -116,21 +117,23 @@ In our project, we are trying to classify accidents into the following categorie
 2. Severe
 3. Fatal
 
-Since this is a classification task, we chose logistic regression as our machine learning model.
+Since this is a classification task, we chose logistic regression as our first machine learning model.
 
 Our model analyses the given data (42 columns) and outputs 0 if the accident is classified as 'slight', 1 if it is 'serious', and 2 if it is 'fatal'. We use multiclass logistic regression since there are more than 2 labels. 
 
 
 ### Model 2: Neural Networks
 
-Our work done can be found in the notebook `Milestone_4.ipynb`. Here is the link to this [jupyter notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_4.ipynb).
+Our work done can be found in the jupyter notebook `Milestone_4.ipynb`. Here is the link to this [notebook](https://github.com/yashilvora19/accident_severity_prediction/blob/main/Milestone_4.ipynb).
 
-For this milestone, we decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than 85%, i.e. it should not predict only 'Mild' accidents (this was a drawback of our last model) and should try to classify the accidents as Severe and Fatal as well. 
+For this milestone, we decided to run a Neural Network on our data. The aim is to get a model that works at a better accuracy than our previous logistic regression model, since the last one had some drawbacks as discussed below. Additionally, we want to ensure that all three classes are being predicted in our output (more discussion below).  
 
 #### Neural Network: 
 In the Neural Network we created, we used the following specifications and parameters:
+
+TODO: Is this supposed to go into the discussion part?
 - 4 layers: Upon some tuning of the number of layers, we found that 4 layers was the sweet spot between efficiency and output. We also did not want to overfit our training data, so we decided to keep the number of layers relatively low. 
-- Sigmoid activation functions in hidden layers: We tuned our hyperparameters to find that this worked best as an activation function in our three hidden layers. A sigmoid activation function is simple enough for efficient runtime, and works well with classification problems. Our hidden layers have 64, 32, and 16 units respectively, to allow the data to scale down for our final output layer
+- Sigmoid activation functions in hidden layers: We tuned our hyperparameters to find that this worked best as an activation function in our three hidden layers. A sigmoid activation function is simple enough for efficient runtime, and works well with classification problems. Our hidden layers have 64, 32, and 16 units respectively, to allow the data to scale down for our final output layer. 
 - Softmax activation function in output layer: Since our output is a multinomial classification, we found that softmax was the best activation function to match the results we wanted. We used three units in our output layer, since our model is supposed to classify into three classes: 'Mild', 'Severe', and 'Fatal'.
 - Adam optimizer: We used Adam over SGD as our optimizer because it is better suited for large datasets, and converges faster without any tradeoff accuracy-wise.
 - Sparse categorical crossentropy loss: We used  "Sparse Categorical Crossentropy" as our loss function because it allows for the data to not be one-hot encoded (which aligns with our preprocessed data) and optimizes for minimized loss across all three classes. We found from past work that using optimization functions such as mse would not work as efficiently with multiple classes. 
@@ -142,61 +145,61 @@ TODO: Work for SVM's here...
 ## Results
 
 ### Data Exploration Results
-Through the heatmap and pair-plot we had decided to plot, we were able to see trends and patterns through a few more visualizations of light intensities VS number of accidents, number of casualties VS number of vehicles, and how the number of accidents varied over the past 4 years. 
+Through the heatmap and pair-plot we had decided to plot, we were able to see trends and patterns. These were corroborated by a few more visualizations of specific trends: light intensities vs number of accidents, number of casualties vs number of vehicles, and number of accidents vs time (over a span of 4 years). 
 
-The pair-plot we had plotted is given below. Through this pairplot, we can see the clear relation between latitude and longitude since it maps out the shape of UK.
-We can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. 
+The pair-plot we created is given below. Through this pairplot, we can see the clear relation between latitude and longitude since the data maps out across the United Kingdom.
+We can also see a correlation between the year and number of casualties, since the number of casualties decreases per year (good job, UK traffic police! (TODO: I added this lol remove it if you want)). There also seem to be correlations between the latitude/longitude and the number of casualties/accidents. 
 ![pairplot](imgs/pairplot.png)
 
-Next, we plotted a heatmap, we can see that the highest correlations is with Number of Casualties, at 0.088 . 
+Next, we plotted a heatmap - we can see that the highest correlation coefficient that Accident Severity has is with Number of Casualties, at 0.088 . 
 ![heatmap](imgs/heatmap.png)
 
 Other graphs that we plotted are given below: 
 
-1. Accidents by Light Conditions
-We can seee that the maximum number of accidents happen in the daylight.
+1. Accidents vs Light Conditions
+We can see that the maximum number of accidents happen in the daylight.
 ![img1](imgs/img1.png)
 
-3. Accidents over Time
-Number of accidents seem to be similar in all the years for similar timings during the year.
+3. Accidents vs Time
+Number of accidents seem to be similar in all the years for similar periods across the year.
 ![img2](imgs/img2.png)
 
-4. Number of Vehicles V/S Number of Casualities
+4. Number of Vehicles vs Number of Casualities
 Through this, we can see that greater the number of vehicles we have, more the casualties. This is another useful inference which gives us an indication about how the data is correlated.
 ![img3](imgs/img3.png)
 
 ### Preprocessing Results
 
 #### Categorical Features
-Categorical features which were one-hot encoded to convert them into numerical representations include, Road_Surface_ConditionsRoad_Type, Urban_or_Rural_Area, and Vehicle_Type. This conversion was necessary to incorporate these features into machine learning models effectively.
+Categorical features which were one-hot encoded to convert them into numerical representations include `Road_Surface_Conditions`, `Road_Type`, `Urban_or_Rural_Area`, and `Vehicle_Type`. This conversion was necessary to incorporate these features into machine learning models effectively.
 
-Light_Conditions, while also a categorical feature, was treated as ordinal and encoded from 0 to 3 to preserve the inherent order in its categories.
+`Light_Conditions`, while also a categorical feature, was treated as ordinal and encoded from 0 to 3 to preserve the inherent order in its categories.
 
-To handle the Weather Conditions feature, which could have multiple categories per row, we utilized the MultiBinarizer technique. This allowed us to represent each weather condition as a binary feature, facilitating its inclusion in the analysis.
+To handle the `Weather_Conditions` feature, which could have multiple categories per row, we utilized the MultiBinarizer technique. This allowed us to represent each weather condition as a binary feature, facilitating its inclusion in the analysis.
 
 #### Numerical Features
 
-The Latitude and Longitude features were normalized to ensure that their magnitudes did not unduly influence the machine learning algorithms. Normalization was performed by subtracting the mean and dividing by the standard deviation of each feature.
+The `Latitude` and `Longitude` features were normalized to ensure that their magnitudes did not unduly influence the machine learning algorithms. Normalization was performed by subtracting the mean and dividing by the standard deviation of each feature.
 Before normalization, summary statistics such as mean and standard deviation were calculated for these features to provide insights into their distributions and the extent of scaling required.
 
 #### Feature Retention
 
-The features Number_of_Casualties and Number_of_Vehicles were left unchanged during preprocessing. This decision was made based on their inherent numerical nature and relevance to the study objective. These features were considered essential for predicting accident severity and were thus retained without transformation.
+The features `Number_of_Casualties` and `Number_of_Vehicles` were left unchanged during preprocessing. This decision was made based on their inherent numerical nature and relevance to the study objective. These features were considered essential for predicting accident severity and were thus retained without transformation.
 
 ### Model 1: Logistic Regression Results
 Further evaluations on the performance of the model have been done within the file labelled `Milestone 3.ipynb`.
-The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and 85.26% for our Training, Testing and Validation. Other parameters such as recall, precision and support can be seen below in the classification reports.
+The accuracy of our Logistic Regression model, came out to be 85.19%, 85.14% and 85.26% for our Training, Testing and Validation data. Other parameters such as recall, precision and support can be seen below in the classification reports.
 ![accuracy](imgs/accuracy.png)
 
 We also plotted the frequency of our actual and predicted values.
 ![freq1](imgs/freq1.png)
 ![freq2](imgs/freq2.png)
 
-
+TODO: what issue?? we clearly missed something here. 
 We can see this issue through the graph of the distribution of the data as well- the actual values have majority accidents classified as mild while the predicted values have all of them classified as that.
 ![graph.png](imgs/graph.png)
 
-Since all 3 accuracies are close to each other (around 85%), and at the same the mean squared error is also close (around 0.18), we can say that there is no major underfitting or overfitting that can be observed.
+Since all 3 accuracies are close to each other (around 85%), and simultaneously the mean squared error is also close (around 0.18), we can say that there is no major underfitting or overfitting that can be observed.
 
 ### Model 2: Neural Network Results
 
@@ -234,7 +237,7 @@ TODO
 ## Discussion
 
 ### Data Exploration Discussion 
-For this we decided to start with a heat map and a pair plot to get a basic understanding of how the data is. After generating the pairplot we found that there is a  clear relation between latitude and longitude. Further, we can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This includes lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
+For this we decided to start with a heatmap and a pairplot to get a basic understanding of how the data is. After generating the pairplot we found that there is a  clear relation between latitude and longitude. Further, we can also see a correlation between year and number of casulties, since the number of casualties decreases per year. There also seems to be correlations between the latitude and longitude and the number of casualties/accidents. This could indicate that some regions in UK have more accidents and more work needs to be done there. This includes lack of traffic signals, poor road safety, or just rash drivers breaking speed limits. 
 
 Next, by generating a heatmap we came to the concusion that  there is an extremely low correlation between Accident Severity and all other columns. As seen earlier,  the highest correlations is with Number of Casualties, at 0.088. However, it should be noted that this doesn't mean that there isn't a connection between our input and output. 
 
