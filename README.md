@@ -295,14 +295,6 @@ TODO
 
 ## Conclusion and Future Steps
 
-TODO:
-
-This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts
-
-We now look to compare our results from this model to those of even more classification models, such as Decision Trees and SVMs. Some issues that we might encounter when doing this would be to adapt these models to multinomial classification, which is something that we have not worked with yet. We are eager for the challenge, and aspire to get a better understanding of a range of classification models. Ideally, this would improve the accuracy beyond what we have had in the past two models. This would further help us determine which one works the best for our data. 
-
-
-
 In this project, we tried to predict the severity of road accidents using various supervised machine learning models. We explored Logistic Regression, Neural Networks, and began to delve into SVMs, aiming to classify accidents into categories of 'Mild', 'Severe', and 'Fatal'.
 
 Our data exploration provided valuable insights into the distribution of accidents, correlations between different features, and key trends such as accidents by light conditions and variations over time. Preprocessing steps including encoding categorical features and normalizing numerical ones were essential for preparing the data for modeling. Our classification models showed promise, although improvements in accuracy are still necessary.
