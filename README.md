@@ -55,21 +55,21 @@ Yashil Vora
     - [Preprocessing Steps](#preprocessing-steps)
     - [Model 1: Logistic Regression](#model-1-logistic-regression)
     - [Model 2: Neural Networks](#model-2-neural-networks)
-    - [Model 3: Random Forests](#model-3-random-forests)
+    - [Model 3: Random Forests](#model-3-random-forest)
 
 - [**Results**](#results)
     - [Data Exploration](#data-exploration-results)
     - [Preprocessing Steps](#preprocessing-results)
     - [Model 1: Logistic Regression](#model-1-logistic-regression-results)
     - [Model 2: Neural Networks](#model-2-neural-network-results)
-    - [Model 3: Random Forests](#model-3-random-forests-results)
+    - [Model 3: Random Forests](#model-3-random-forest-results)
 
 - [**Discussion**](#discussion)
     - [Data Exploration](#data-exploration-discussion)
     - [Preprocessing Steps](#preprocessing-discussion)
     - [Model 1: Logistic Regression](#model-1-logistic-regression-discussion)
     - [Model 2: Neural Networks](#model-2-neural-network-discussion)
-    - [Model 3: Random Forests](#model-3-random-forests-discussion)
+    - [Model 3: Random Forests](#model-3-random-forest-discussion)
 
 - [**Conclusion**](#conclusion-and-future-steps)
 
