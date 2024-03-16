@@ -341,7 +341,7 @@ Initially, our group had 8 members- however, over the first few weeks, 4 of the 
 
 Within the 4 of us, we alternated between the programming and writing our work to the README over the different milestones. 
 
-Ishika Agrawal: Worked on building the neural network model, working on hyperparameter tuning it, and organizing our README and testing out our SVM model. ALSO 
+Ishika Agrawal: Worked on building the neural network model, working on hyperparameter tuning neural network and SVM, and organizing our README and testing out our SVM model.  
 
 Arnav Kamdar: Worked on logistic regression, SVM's and Decision Trees (testing and evaluating performance) organizing the README for the different milestones
 
